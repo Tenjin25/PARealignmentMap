@@ -1404,10 +1404,12 @@ document.addEventListener('DOMContentLoaded', function() {
             'US Senate': 'us_senate',
             'Attorney General': 'attorney_general',
             'Secretary of State': 'secretary_of_state',
-            'Auditor of State': 'state_auditor',
-            'State Auditor': 'state_auditor',
+            'Auditor of State': 'auditor_general',
+            'State Auditor': 'auditor_general',
+            'Auditor General': 'auditor_general',
             'Treasurer of State': 'state_treasurer',
             'Treasure of State': 'state_treasurer',
+            'State Treasurer': 'state_treasurer',
             'Justice of the Supreme Court': 'supreme_court'
           };
           const mappedOfficeType = officeTypeMap[officeType] || officeType.toLowerCase().replace(/[.\s]+/g, '_');
@@ -1530,7 +1532,8 @@ function mergeGeoElectionData(boundaryGeoJSON, electionData, countyKey='County',
         'us_senate_special': 'United States Senator (Special Election)',
         'secretary_of_state': 'Secretary of State',
         'attorney_general': 'Attorney General',
-        'state_auditor': 'State Auditor',
+        'auditor_general': 'Auditor General',
+        'state_treasurer': 'State Treasurer',
         'us_house': 'US House',
         'state_senate': 'State Senate',
         'state_house': 'State House',
@@ -1586,7 +1589,7 @@ function mergeGeoElectionData(boundaryGeoJSON, electionData, countyKey='County',
         spinner.innerHTML = '<svg width="18" height="18" viewBox="0 0 50 50"><circle cx="25" cy="25" r="20" fill="none" stroke="#2563eb" stroke-width="5" stroke-linecap="round" stroke-dasharray="31.4 31.4" transform="rotate(-90 25 25)"/></svg>';
         sel.parentNode.insertBefore(spinner, sel.nextSibling);
       }
-      const contestTypes = ['president', 'us_senate', 'us_senate_special', 'governor', 'secretary_of_state', 'attorney_general', 'state_auditor'];
+      const contestTypes = ['president', 'us_senate', 'us_senate_special', 'governor', 'secretary_of_state', 'attorney_general', 'auditor_general', 'state_treasurer'];
       // Precompute contest/year pairs in a single pass
       const contestYearPairs = {};
       csvData.forEach(row => {
@@ -1606,7 +1609,8 @@ function mergeGeoElectionData(boundaryGeoJSON, electionData, countyKey='County',
         'us_senate_special': 'U.S. Senate Special Elections',
         'secretary_of_state': 'Secretary of State Elections',
         'attorney_general': 'Attorney General Elections',
-        'state_auditor': 'State Auditor Elections'
+        'auditor_general': 'Auditor General Elections',
+        'state_treasurer': 'State Treasurer Elections'
       };
       
       contestTypes.forEach(contestType => {

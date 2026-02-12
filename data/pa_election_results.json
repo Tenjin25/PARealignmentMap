@@ -13,6 +13,7 @@
       2016,
       2018,
       2020,
+      2022,
       2024
     ],
     "contests": [
@@ -56682,6 +56683,3506 @@
                 "DEM": 79607,
                 "REP": 156339,
                 "OTHER": 6656
+              }
+            }
+          }
+        }
+      }
+    },
+    "2022": {
+      "us_senate": {
+        "us_senate_2022": {
+          "contest_name": "United States Senator",
+          "results": {
+            "Adams": {
+              "county": "Adams",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 16096,
+              "rep_votes": 29039,
+              "other_votes": 1284,
+              "total_votes": 46419,
+              "two_party_total": 45135,
+              "margin": -12943,
+              "margin_pct": -28.68,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Stronghold Republican",
+                "party": "Republican",
+                "code": "R_STRONGHOLD",
+                "color": "#cb181d"
+              },
+              "all_parties": {
+                "DEM": 16096,
+                "REP": 29039,
+                "OTHER": 1284
+              }
+            },
+            "Allegheny": {
+              "county": "Allegheny",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 363873,
+              "rep_votes": 200632,
+              "other_votes": 9204,
+              "total_votes": 573709,
+              "two_party_total": 564505,
+              "margin": 163241,
+              "margin_pct": 28.92,
+              "winner": "DEM",
+              "competitiveness": {
+                "category": "Stronghold Democratic",
+                "party": "Democratic",
+                "code": "D_STRONGHOLD",
+                "color": "#3182bd"
+              },
+              "all_parties": {
+                "DEM": 363873,
+                "REP": 200632,
+                "OTHER": 9204
+              }
+            },
+            "Armstrong": {
+              "county": "Armstrong",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 8065,
+              "rep_votes": 19575,
+              "other_votes": 773,
+              "total_votes": 28413,
+              "two_party_total": 27640,
+              "margin": -11510,
+              "margin_pct": -41.64,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Annihilation Republican",
+                "party": "Republican",
+                "code": "R_ANNIHILATION",
+                "color": "#67000d"
+              },
+              "all_parties": {
+                "DEM": 8065,
+                "REP": 19575,
+                "OTHER": 773
+              }
+            },
+            "Beaver": {
+              "county": "Beaver",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 32692,
+              "rep_votes": 38772,
+              "other_votes": 1979,
+              "total_votes": 73443,
+              "two_party_total": 71464,
+              "margin": -6080,
+              "margin_pct": -8.51,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Likely Republican",
+                "party": "Republican",
+                "code": "R_LIKELY",
+                "color": "#fb6a4a"
+              },
+              "all_parties": {
+                "DEM": 32692,
+                "REP": 38772,
+                "OTHER": 1979
+              }
+            },
+            "Bedford": {
+              "county": "Bedford",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 3796,
+              "rep_votes": 17954,
+              "other_votes": 491,
+              "total_votes": 22241,
+              "two_party_total": 21750,
+              "margin": -14158,
+              "margin_pct": -65.09,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Annihilation Republican",
+                "party": "Republican",
+                "code": "R_ANNIHILATION",
+                "color": "#67000d"
+              },
+              "all_parties": {
+                "DEM": 3796,
+                "REP": 17954,
+                "OTHER": 491
+              }
+            },
+            "Berks": {
+              "county": "Berks",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 71349,
+              "rep_votes": 78019,
+              "other_votes": 5456,
+              "total_votes": 154824,
+              "two_party_total": 149368,
+              "margin": -6670,
+              "margin_pct": -4.47,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Lean Republican",
+                "party": "Republican",
+                "code": "R_LEAN",
+                "color": "#fcae91"
+              },
+              "all_parties": {
+                "DEM": 71349,
+                "REP": 78019,
+                "OTHER": 5456
+              }
+            },
+            "Blair": {
+              "county": "Blair",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 14763,
+              "rep_votes": 34214,
+              "other_votes": 1243,
+              "total_votes": 50220,
+              "two_party_total": 48977,
+              "margin": -19451,
+              "margin_pct": -39.71,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Dominant Republican",
+                "party": "Republican",
+                "code": "R_DOMINANT",
+                "color": "#a50f15"
+              },
+              "all_parties": {
+                "DEM": 14763,
+                "REP": 34214,
+                "OTHER": 1243
+              }
+            },
+            "Bradford": {
+              "county": "Bradford",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 6632,
+              "rep_votes": 16033,
+              "other_votes": 816,
+              "total_votes": 23481,
+              "two_party_total": 22665,
+              "margin": -9401,
+              "margin_pct": -41.48,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Annihilation Republican",
+                "party": "Republican",
+                "code": "R_ANNIHILATION",
+                "color": "#67000d"
+              },
+              "all_parties": {
+                "DEM": 6632,
+                "REP": 16033,
+                "OTHER": 816
+              }
+            },
+            "Bucks": {
+              "county": "Bucks",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 164536,
+              "rep_votes": 141340,
+              "other_votes": 8435,
+              "total_votes": 314311,
+              "two_party_total": 305876,
+              "margin": 23196,
+              "margin_pct": 7.58,
+              "winner": "DEM",
+              "competitiveness": {
+                "category": "Likely Democratic",
+                "party": "Democratic",
+                "code": "D_LIKELY",
+                "color": "#9ecae1"
+              },
+              "all_parties": {
+                "DEM": 164536,
+                "REP": 141340,
+                "OTHER": 8435
+              }
+            },
+            "Butler": {
+              "county": "Butler",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 33921,
+              "rep_votes": 57168,
+              "other_votes": 2246,
+              "total_votes": 93335,
+              "two_party_total": 91089,
+              "margin": -23247,
+              "margin_pct": -25.52,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Stronghold Republican",
+                "party": "Republican",
+                "code": "R_STRONGHOLD",
+                "color": "#cb181d"
+              },
+              "all_parties": {
+                "DEM": 33921,
+                "REP": 57168,
+                "OTHER": 2246
+              }
+            },
+            "Cambria": {
+              "county": "Cambria",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 18849,
+              "rep_votes": 35847,
+              "other_votes": 1652,
+              "total_votes": 56348,
+              "two_party_total": 54696,
+              "margin": -16998,
+              "margin_pct": -31.08,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Dominant Republican",
+                "party": "Republican",
+                "code": "R_DOMINANT",
+                "color": "#a50f15"
+              },
+              "all_parties": {
+                "DEM": 18849,
+                "REP": 35847,
+                "OTHER": 1652
+              }
+            },
+            "Cameron": {
+              "county": "Cameron",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 547,
+              "rep_votes": 1247,
+              "other_votes": 92,
+              "total_votes": 1886,
+              "two_party_total": 1794,
+              "margin": -700,
+              "margin_pct": -39.02,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Dominant Republican",
+                "party": "Republican",
+                "code": "R_DOMINANT",
+                "color": "#a50f15"
+              },
+              "all_parties": {
+                "DEM": 547,
+                "REP": 1247,
+                "OTHER": 92
+              }
+            },
+            "Carbon": {
+              "county": "Carbon",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 9682,
+              "rep_votes": 15659,
+              "other_votes": 891,
+              "total_votes": 26232,
+              "two_party_total": 25341,
+              "margin": -5977,
+              "margin_pct": -23.59,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Stronghold Republican",
+                "party": "Republican",
+                "code": "R_STRONGHOLD",
+                "color": "#cb181d"
+              },
+              "all_parties": {
+                "DEM": 9682,
+                "REP": 15659,
+                "OTHER": 891
+              }
+            },
+            "Centre": {
+              "county": "Centre",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 32597,
+              "rep_votes": 27902,
+              "other_votes": 1562,
+              "total_votes": 62061,
+              "two_party_total": 60499,
+              "margin": 4695,
+              "margin_pct": 7.76,
+              "winner": "DEM",
+              "competitiveness": {
+                "category": "Likely Democratic",
+                "party": "Democratic",
+                "code": "D_LIKELY",
+                "color": "#9ecae1"
+              },
+              "all_parties": {
+                "DEM": 32597,
+                "REP": 27902,
+                "OTHER": 1562
+              }
+            },
+            "Chester": {
+              "county": "Chester",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 147559,
+              "rep_votes": 104020,
+              "other_votes": 6384,
+              "total_votes": 257963,
+              "two_party_total": 251579,
+              "margin": 43539,
+              "margin_pct": 17.31,
+              "winner": "DEM",
+              "competitiveness": {
+                "category": "Safe Democratic",
+                "party": "Democratic",
+                "code": "D_SAFE",
+                "color": "#6baed6"
+              },
+              "all_parties": {
+                "DEM": 147559,
+                "REP": 104020,
+                "OTHER": 6384
+              }
+            },
+            "Clarion": {
+              "county": "Clarion",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 4327,
+              "rep_votes": 10620,
+              "other_votes": 424,
+              "total_votes": 15371,
+              "two_party_total": 14947,
+              "margin": -6293,
+              "margin_pct": -42.1,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Annihilation Republican",
+                "party": "Republican",
+                "code": "R_ANNIHILATION",
+                "color": "#67000d"
+              },
+              "all_parties": {
+                "DEM": 4327,
+                "REP": 10620,
+                "OTHER": 424
+              }
+            },
+            "Clearfield": {
+              "county": "Clearfield",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 8533,
+              "rep_votes": 21948,
+              "other_votes": 918,
+              "total_votes": 31399,
+              "two_party_total": 30481,
+              "margin": -13415,
+              "margin_pct": -44.01,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Annihilation Republican",
+                "party": "Republican",
+                "code": "R_ANNIHILATION",
+                "color": "#67000d"
+              },
+              "all_parties": {
+                "DEM": 8533,
+                "REP": 21948,
+                "OTHER": 918
+              }
+            },
+            "Clinton": {
+              "county": "Clinton",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 4750,
+              "rep_votes": 8791,
+              "other_votes": 476,
+              "total_votes": 14017,
+              "two_party_total": 13541,
+              "margin": -4041,
+              "margin_pct": -29.84,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Stronghold Republican",
+                "party": "Republican",
+                "code": "R_STRONGHOLD",
+                "color": "#cb181d"
+              },
+              "all_parties": {
+                "DEM": 4750,
+                "REP": 8791,
+                "OTHER": 476
+              }
+            },
+            "Columbia": {
+              "county": "Columbia",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 9023,
+              "rep_votes": 14830,
+              "other_votes": 892,
+              "total_votes": 24745,
+              "two_party_total": 23853,
+              "margin": -5807,
+              "margin_pct": -24.34,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Stronghold Republican",
+                "party": "Republican",
+                "code": "R_STRONGHOLD",
+                "color": "#cb181d"
+              },
+              "all_parties": {
+                "DEM": 9023,
+                "REP": 14830,
+                "OTHER": 892
+              }
+            },
+            "Crawford": {
+              "county": "Crawford",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 11081,
+              "rep_votes": 20992,
+              "other_votes": 960,
+              "total_votes": 33033,
+              "two_party_total": 32073,
+              "margin": -9911,
+              "margin_pct": -30.9,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Dominant Republican",
+                "party": "Republican",
+                "code": "R_DOMINANT",
+                "color": "#a50f15"
+              },
+              "all_parties": {
+                "DEM": 11081,
+                "REP": 20992,
+                "OTHER": 960
+              }
+            },
+            "Cumberland": {
+              "county": "Cumberland",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 53278,
+              "rep_votes": 59663,
+              "other_votes": 2986,
+              "total_votes": 115927,
+              "two_party_total": 112941,
+              "margin": -6385,
+              "margin_pct": -5.65,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Likely Republican",
+                "party": "Republican",
+                "code": "R_LIKELY",
+                "color": "#fb6a4a"
+              },
+              "all_parties": {
+                "DEM": 53278,
+                "REP": 59663,
+                "OTHER": 2986
+              }
+            },
+            "Dauphin": {
+              "county": "Dauphin",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 61599,
+              "rep_votes": 50141,
+              "other_votes": 2706,
+              "total_votes": 114446,
+              "two_party_total": 111740,
+              "margin": 11458,
+              "margin_pct": 10.25,
+              "winner": "DEM",
+              "competitiveness": {
+                "category": "Safe Democratic",
+                "party": "Democratic",
+                "code": "D_SAFE",
+                "color": "#6baed6"
+              },
+              "all_parties": {
+                "DEM": 61599,
+                "REP": 50141,
+                "OTHER": 2706
+              }
+            },
+            "Delaware": {
+              "county": "Delaware",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 157599,
+              "rep_votes": 87322,
+              "other_votes": 5746,
+              "total_votes": 250667,
+              "two_party_total": 244921,
+              "margin": 70277,
+              "margin_pct": 28.69,
+              "winner": "DEM",
+              "competitiveness": {
+                "category": "Stronghold Democratic",
+                "party": "Democratic",
+                "code": "D_STRONGHOLD",
+                "color": "#3182bd"
+              },
+              "all_parties": {
+                "DEM": 157599,
+                "REP": 87322,
+                "OTHER": 5746
+              }
+            },
+            "Elk": {
+              "county": "Elk",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 4066,
+              "rep_votes": 9128,
+              "other_votes": 425,
+              "total_votes": 13619,
+              "two_party_total": 13194,
+              "margin": -5062,
+              "margin_pct": -38.37,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Dominant Republican",
+                "party": "Republican",
+                "code": "R_DOMINANT",
+                "color": "#a50f15"
+              },
+              "all_parties": {
+                "DEM": 4066,
+                "REP": 9128,
+                "OTHER": 425
+              }
+            },
+            "Erie": {
+              "county": "Erie",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 56404,
+              "rep_votes": 46507,
+              "other_votes": 2823,
+              "total_votes": 105734,
+              "two_party_total": 102911,
+              "margin": 9897,
+              "margin_pct": 9.62,
+              "winner": "DEM",
+              "competitiveness": {
+                "category": "Likely Democratic",
+                "party": "Democratic",
+                "code": "D_LIKELY",
+                "color": "#9ecae1"
+              },
+              "all_parties": {
+                "DEM": 56404,
+                "REP": 46507,
+                "OTHER": 2823
+              }
+            },
+            "Fayette": {
+              "county": "Fayette",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 17731,
+              "rep_votes": 28234,
+              "other_votes": 859,
+              "total_votes": 46824,
+              "two_party_total": 45965,
+              "margin": -10503,
+              "margin_pct": -22.85,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Stronghold Republican",
+                "party": "Republican",
+                "code": "R_STRONGHOLD",
+                "color": "#cb181d"
+              },
+              "all_parties": {
+                "DEM": 17731,
+                "REP": 28234,
+                "OTHER": 859
+              }
+            },
+            "Forest": {
+              "county": "Forest",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 694,
+              "rep_votes": 1434,
+              "other_votes": 54,
+              "total_votes": 2182,
+              "two_party_total": 2128,
+              "margin": -740,
+              "margin_pct": -34.77,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Dominant Republican",
+                "party": "Republican",
+                "code": "R_DOMINANT",
+                "color": "#a50f15"
+              },
+              "all_parties": {
+                "DEM": 694,
+                "REP": 1434,
+                "OTHER": 54
+              }
+            },
+            "Franklin": {
+              "county": "Franklin",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 18718,
+              "rep_votes": 44819,
+              "other_votes": 1683,
+              "total_votes": 65220,
+              "two_party_total": 63537,
+              "margin": -26101,
+              "margin_pct": -41.08,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Annihilation Republican",
+                "party": "Republican",
+                "code": "R_ANNIHILATION",
+                "color": "#67000d"
+              },
+              "all_parties": {
+                "DEM": 18718,
+                "REP": 44819,
+                "OTHER": 1683
+              }
+            },
+            "Fulton": {
+              "county": "Fulton",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 953,
+              "rep_votes": 5171,
+              "other_votes": 122,
+              "total_votes": 6246,
+              "two_party_total": 6124,
+              "margin": -4218,
+              "margin_pct": -68.88,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Annihilation Republican",
+                "party": "Republican",
+                "code": "R_ANNIHILATION",
+                "color": "#67000d"
+              },
+              "all_parties": {
+                "DEM": 953,
+                "REP": 5171,
+                "OTHER": 122
+              }
+            },
+            "Greene": {
+              "county": "Greene",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 4394,
+              "rep_votes": 8348,
+              "other_votes": 349,
+              "total_votes": 13091,
+              "two_party_total": 12742,
+              "margin": -3954,
+              "margin_pct": -31.03,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Dominant Republican",
+                "party": "Republican",
+                "code": "R_DOMINANT",
+                "color": "#a50f15"
+              },
+              "all_parties": {
+                "DEM": 4394,
+                "REP": 8348,
+                "OTHER": 349
+              }
+            },
+            "Huntingdon": {
+              "county": "Huntingdon",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 4665,
+              "rep_votes": 13035,
+              "other_votes": 564,
+              "total_votes": 18264,
+              "two_party_total": 17700,
+              "margin": -8370,
+              "margin_pct": -47.29,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Annihilation Republican",
+                "party": "Republican",
+                "code": "R_ANNIHILATION",
+                "color": "#67000d"
+              },
+              "all_parties": {
+                "DEM": 4665,
+                "REP": 13035,
+                "OTHER": 564
+              }
+            },
+            "Indiana": {
+              "county": "Indiana",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 11218,
+              "rep_votes": 20769,
+              "other_votes": 768,
+              "total_votes": 32755,
+              "two_party_total": 31987,
+              "margin": -9551,
+              "margin_pct": -29.86,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Stronghold Republican",
+                "party": "Republican",
+                "code": "R_STRONGHOLD",
+                "color": "#cb181d"
+              },
+              "all_parties": {
+                "DEM": 11218,
+                "REP": 20769,
+                "OTHER": 768
+              }
+            },
+            "Jefferson": {
+              "county": "Jefferson",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 4135,
+              "rep_votes": 13139,
+              "other_votes": 512,
+              "total_votes": 17786,
+              "two_party_total": 17274,
+              "margin": -9004,
+              "margin_pct": -52.12,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Annihilation Republican",
+                "party": "Republican",
+                "code": "R_ANNIHILATION",
+                "color": "#67000d"
+              },
+              "all_parties": {
+                "DEM": 4135,
+                "REP": 13139,
+                "OTHER": 512
+              }
+            },
+            "Juniata": {
+              "county": "Juniata",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 2111,
+              "rep_votes": 7265,
+              "other_votes": 352,
+              "total_votes": 9728,
+              "two_party_total": 9376,
+              "margin": -5154,
+              "margin_pct": -54.97,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Annihilation Republican",
+                "party": "Republican",
+                "code": "R_ANNIHILATION",
+                "color": "#67000d"
+              },
+              "all_parties": {
+                "DEM": 2111,
+                "REP": 7265,
+                "OTHER": 352
+              }
+            },
+            "Lackawanna": {
+              "county": "Lackawanna",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 50489,
+              "rep_votes": 36534,
+              "other_votes": 1920,
+              "total_votes": 88943,
+              "two_party_total": 87023,
+              "margin": 13955,
+              "margin_pct": 16.04,
+              "winner": "DEM",
+              "competitiveness": {
+                "category": "Safe Democratic",
+                "party": "Democratic",
+                "code": "D_SAFE",
+                "color": "#6baed6"
+              },
+              "all_parties": {
+                "DEM": 50489,
+                "REP": 36534,
+                "OTHER": 1920
+              }
+            },
+            "Lancaster": {
+              "county": "Lancaster",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 94632,
+              "rep_votes": 124798,
+              "other_votes": 5118,
+              "total_votes": 224548,
+              "two_party_total": 219430,
+              "margin": -30166,
+              "margin_pct": -13.75,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Safe Republican",
+                "party": "Republican",
+                "code": "R_SAFE",
+                "color": "#ef3b2c"
+              },
+              "all_parties": {
+                "DEM": 94632,
+                "REP": 124798,
+                "OTHER": 5118
+              }
+            },
+            "Lawrence": {
+              "county": "Lawrence",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 13758,
+              "rep_votes": 21531,
+              "other_votes": 917,
+              "total_votes": 36206,
+              "two_party_total": 35289,
+              "margin": -7773,
+              "margin_pct": -22.03,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Stronghold Republican",
+                "party": "Republican",
+                "code": "R_STRONGHOLD",
+                "color": "#cb181d"
+              },
+              "all_parties": {
+                "DEM": 13758,
+                "REP": 21531,
+                "OTHER": 917
+              }
+            },
+            "Lebanon": {
+              "county": "Lebanon",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 19695,
+              "rep_votes": 35023,
+              "other_votes": 1773,
+              "total_votes": 56491,
+              "two_party_total": 54718,
+              "margin": -15328,
+              "margin_pct": -28.01,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Stronghold Republican",
+                "party": "Republican",
+                "code": "R_STRONGHOLD",
+                "color": "#cb181d"
+              },
+              "all_parties": {
+                "DEM": 19695,
+                "REP": 35023,
+                "OTHER": 1773
+              }
+            },
+            "Lehigh": {
+              "county": "Lehigh",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 73096,
+              "rep_votes": 59219,
+              "other_votes": 3986,
+              "total_votes": 136301,
+              "two_party_total": 132315,
+              "margin": 13877,
+              "margin_pct": 10.49,
+              "winner": "DEM",
+              "competitiveness": {
+                "category": "Safe Democratic",
+                "party": "Democratic",
+                "code": "D_SAFE",
+                "color": "#6baed6"
+              },
+              "all_parties": {
+                "DEM": 73096,
+                "REP": 59219,
+                "OTHER": 3986
+              }
+            },
+            "Luzerne": {
+              "county": "Luzerne",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 51504,
+              "rep_votes": 61978,
+              "other_votes": 2841,
+              "total_votes": 116323,
+              "two_party_total": 113482,
+              "margin": -10474,
+              "margin_pct": -9.23,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Likely Republican",
+                "party": "Republican",
+                "code": "R_LIKELY",
+                "color": "#fb6a4a"
+              },
+              "all_parties": {
+                "DEM": 51504,
+                "REP": 61978,
+                "OTHER": 2841
+              }
+            },
+            "Lycoming": {
+              "county": "Lycoming",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 13573,
+              "rep_votes": 31171,
+              "other_votes": 1489,
+              "total_votes": 46233,
+              "two_party_total": 44744,
+              "margin": -17598,
+              "margin_pct": -39.33,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Dominant Republican",
+                "party": "Republican",
+                "code": "R_DOMINANT",
+                "color": "#a50f15"
+              },
+              "all_parties": {
+                "DEM": 13573,
+                "REP": 31171,
+                "OTHER": 1489
+              }
+            },
+            "Mckean": {
+              "county": "Mckean",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 4135,
+              "rep_votes": 10076,
+              "other_votes": 440,
+              "total_votes": 14651,
+              "two_party_total": 14211,
+              "margin": -5941,
+              "margin_pct": -41.81,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Annihilation Republican",
+                "party": "Republican",
+                "code": "R_ANNIHILATION",
+                "color": "#67000d"
+              },
+              "all_parties": {
+                "DEM": 4135,
+                "REP": 10076,
+                "OTHER": 440
+              }
+            },
+            "Mercer": {
+              "county": "Mercer",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 17080,
+              "rep_votes": 27049,
+              "other_votes": 1223,
+              "total_votes": 45352,
+              "two_party_total": 44129,
+              "margin": -9969,
+              "margin_pct": -22.59,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Stronghold Republican",
+                "party": "Republican",
+                "code": "R_STRONGHOLD",
+                "color": "#cb181d"
+              },
+              "all_parties": {
+                "DEM": 17080,
+                "REP": 27049,
+                "OTHER": 1223
+              }
+            },
+            "Mifflin": {
+              "county": "Mifflin",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 3965,
+              "rep_votes": 12263,
+              "other_votes": 557,
+              "total_votes": 16785,
+              "two_party_total": 16228,
+              "margin": -8298,
+              "margin_pct": -51.13,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Annihilation Republican",
+                "party": "Republican",
+                "code": "R_ANNIHILATION",
+                "color": "#67000d"
+              },
+              "all_parties": {
+                "DEM": 3965,
+                "REP": 12263,
+                "OTHER": 557
+              }
+            },
+            "Monroe": {
+              "county": "Monroe",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 30251,
+              "rep_votes": 26746,
+              "other_votes": 1733,
+              "total_votes": 58730,
+              "two_party_total": 56997,
+              "margin": 3505,
+              "margin_pct": 6.15,
+              "winner": "DEM",
+              "competitiveness": {
+                "category": "Likely Democratic",
+                "party": "Democratic",
+                "code": "D_LIKELY",
+                "color": "#9ecae1"
+              },
+              "all_parties": {
+                "DEM": 30251,
+                "REP": 26746,
+                "OTHER": 1733
+              }
+            },
+            "Montgomery": {
+              "county": "Montgomery",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 260207,
+              "rep_votes": 143077,
+              "other_votes": 9670,
+              "total_votes": 412954,
+              "two_party_total": 403284,
+              "margin": 117130,
+              "margin_pct": 29.04,
+              "winner": "DEM",
+              "competitiveness": {
+                "category": "Stronghold Democratic",
+                "party": "Democratic",
+                "code": "D_STRONGHOLD",
+                "color": "#3182bd"
+              },
+              "all_parties": {
+                "DEM": 260207,
+                "REP": 143077,
+                "OTHER": 9670
+              }
+            },
+            "Montour": {
+              "county": "Montour",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 3213,
+              "rep_votes": 4328,
+              "other_votes": 292,
+              "total_votes": 7833,
+              "two_party_total": 7541,
+              "margin": -1115,
+              "margin_pct": -14.79,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Safe Republican",
+                "party": "Republican",
+                "code": "R_SAFE",
+                "color": "#ef3b2c"
+              },
+              "all_parties": {
+                "DEM": 3213,
+                "REP": 4328,
+                "OTHER": 292
+              }
+            },
+            "Northampton": {
+              "county": "Northampton",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 66565,
+              "rep_votes": 59860,
+              "other_votes": 3562,
+              "total_votes": 129987,
+              "two_party_total": 126425,
+              "margin": 6705,
+              "margin_pct": 5.3,
+              "winner": "DEM",
+              "competitiveness": {
+                "category": "Lean Democratic",
+                "party": "Democratic",
+                "code": "D_LEAN",
+                "color": "#c6dbef"
+              },
+              "all_parties": {
+                "DEM": 66565,
+                "REP": 59860,
+                "OTHER": 3562
+              }
+            },
+            "Northumberland": {
+              "county": "Northumberland",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 10812,
+              "rep_votes": 20992,
+              "other_votes": 1091,
+              "total_votes": 32895,
+              "two_party_total": 31804,
+              "margin": -10180,
+              "margin_pct": -32.01,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Dominant Republican",
+                "party": "Republican",
+                "code": "R_DOMINANT",
+                "color": "#a50f15"
+              },
+              "all_parties": {
+                "DEM": 10812,
+                "REP": 20992,
+                "OTHER": 1091
+              }
+            },
+            "Perry": {
+              "county": "Perry",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 5646,
+              "rep_votes": 13956,
+              "other_votes": 629,
+              "total_votes": 20231,
+              "two_party_total": 19602,
+              "margin": -8310,
+              "margin_pct": -42.39,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Annihilation Republican",
+                "party": "Republican",
+                "code": "R_ANNIHILATION",
+                "color": "#67000d"
+              },
+              "all_parties": {
+                "DEM": 5646,
+                "REP": 13956,
+                "OTHER": 629
+              }
+            },
+            "Philadelphia": {
+              "county": "Philadelphia",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 412841,
+              "rep_votes": 78408,
+              "other_votes": 7902,
+              "total_votes": 499151,
+              "two_party_total": 491249,
+              "margin": 334433,
+              "margin_pct": 68.08,
+              "winner": "DEM",
+              "competitiveness": {
+                "category": "Annihilation Democratic",
+                "party": "Democratic",
+                "code": "D_ANNIHILATION",
+                "color": "#08306b"
+              },
+              "all_parties": {
+                "DEM": 412841,
+                "REP": 78408,
+                "OTHER": 7902
+              }
+            },
+            "Pike": {
+              "county": "Pike",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 9821,
+              "rep_votes": 14792,
+              "other_votes": 583,
+              "total_votes": 25196,
+              "two_party_total": 24613,
+              "margin": -4971,
+              "margin_pct": -20.2,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Stronghold Republican",
+                "party": "Republican",
+                "code": "R_STRONGHOLD",
+                "color": "#cb181d"
+              },
+              "all_parties": {
+                "DEM": 9821,
+                "REP": 14792,
+                "OTHER": 583
+              }
+            },
+            "Potter": {
+              "county": "Potter",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 1415,
+              "rep_votes": 5486,
+              "other_votes": 207,
+              "total_votes": 7108,
+              "two_party_total": 6901,
+              "margin": -4071,
+              "margin_pct": -58.99,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Annihilation Republican",
+                "party": "Republican",
+                "code": "R_ANNIHILATION",
+                "color": "#67000d"
+              },
+              "all_parties": {
+                "DEM": 1415,
+                "REP": 5486,
+                "OTHER": 207
+              }
+            },
+            "Schuylkill": {
+              "county": "Schuylkill",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 17954,
+              "rep_votes": 35293,
+              "other_votes": 2166,
+              "total_votes": 55413,
+              "two_party_total": 53247,
+              "margin": -17339,
+              "margin_pct": -32.56,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Dominant Republican",
+                "party": "Republican",
+                "code": "R_DOMINANT",
+                "color": "#a50f15"
+              },
+              "all_parties": {
+                "DEM": 17954,
+                "REP": 35293,
+                "OTHER": 2166
+              }
+            },
+            "Snyder": {
+              "county": "Snyder",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 4220,
+              "rep_votes": 10657,
+              "other_votes": 459,
+              "total_votes": 15336,
+              "two_party_total": 14877,
+              "margin": -6437,
+              "margin_pct": -43.27,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Annihilation Republican",
+                "party": "Republican",
+                "code": "R_ANNIHILATION",
+                "color": "#67000d"
+              },
+              "all_parties": {
+                "DEM": 4220,
+                "REP": 10657,
+                "OTHER": 459
+              }
+            },
+            "Somerset": {
+              "county": "Somerset",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 7660,
+              "rep_votes": 23964,
+              "other_votes": 904,
+              "total_votes": 32528,
+              "two_party_total": 31624,
+              "margin": -16304,
+              "margin_pct": -51.56,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Annihilation Republican",
+                "party": "Republican",
+                "code": "R_ANNIHILATION",
+                "color": "#67000d"
+              },
+              "all_parties": {
+                "DEM": 7660,
+                "REP": 23964,
+                "OTHER": 904
+              }
+            },
+            "Sullivan": {
+              "county": "Sullivan",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 869,
+              "rep_votes": 2023,
+              "other_votes": 124,
+              "total_votes": 3016,
+              "two_party_total": 2892,
+              "margin": -1154,
+              "margin_pct": -39.9,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Dominant Republican",
+                "party": "Republican",
+                "code": "R_DOMINANT",
+                "color": "#a50f15"
+              },
+              "all_parties": {
+                "DEM": 869,
+                "REP": 2023,
+                "OTHER": 124
+              }
+            },
+            "Susquehanna": {
+              "county": "Susquehanna",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 5245,
+              "rep_votes": 11520,
+              "other_votes": 546,
+              "total_votes": 17311,
+              "two_party_total": 16765,
+              "margin": -6275,
+              "margin_pct": -37.43,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Dominant Republican",
+                "party": "Republican",
+                "code": "R_DOMINANT",
+                "color": "#a50f15"
+              },
+              "all_parties": {
+                "DEM": 5245,
+                "REP": 11520,
+                "OTHER": 546
+              }
+            },
+            "Tioga": {
+              "county": "Tioga",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 4103,
+              "rep_votes": 11988,
+              "other_votes": 541,
+              "total_votes": 16632,
+              "two_party_total": 16091,
+              "margin": -7885,
+              "margin_pct": -49.0,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Annihilation Republican",
+                "party": "Republican",
+                "code": "R_ANNIHILATION",
+                "color": "#67000d"
+              },
+              "all_parties": {
+                "DEM": 4103,
+                "REP": 11988,
+                "OTHER": 541
+              }
+            },
+            "Union": {
+              "county": "Union",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 6249,
+              "rep_votes": 9401,
+              "other_votes": 444,
+              "total_votes": 16094,
+              "two_party_total": 15650,
+              "margin": -3152,
+              "margin_pct": -20.14,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Stronghold Republican",
+                "party": "Republican",
+                "code": "R_STRONGHOLD",
+                "color": "#cb181d"
+              },
+              "all_parties": {
+                "DEM": 6249,
+                "REP": 9401,
+                "OTHER": 444
+              }
+            },
+            "Venango": {
+              "county": "Venango",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 6777,
+              "rep_votes": 13406,
+              "other_votes": 671,
+              "total_votes": 20854,
+              "two_party_total": 20183,
+              "margin": -6629,
+              "margin_pct": -32.84,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Dominant Republican",
+                "party": "Republican",
+                "code": "R_DOMINANT",
+                "color": "#a50f15"
+              },
+              "all_parties": {
+                "DEM": 6777,
+                "REP": 13406,
+                "OTHER": 671
+              }
+            },
+            "Warren": {
+              "county": "Warren",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 5420,
+              "rep_votes": 10175,
+              "other_votes": 497,
+              "total_votes": 16092,
+              "two_party_total": 15595,
+              "margin": -4755,
+              "margin_pct": -30.49,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Dominant Republican",
+                "party": "Republican",
+                "code": "R_DOMINANT",
+                "color": "#a50f15"
+              },
+              "all_parties": {
+                "DEM": 5420,
+                "REP": 10175,
+                "OTHER": 497
+              }
+            },
+            "Washington": {
+              "county": "Washington",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 39684,
+              "rep_votes": 52337,
+              "other_votes": 1815,
+              "total_votes": 93836,
+              "two_party_total": 92021,
+              "margin": -12653,
+              "margin_pct": -13.75,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Safe Republican",
+                "party": "Republican",
+                "code": "R_SAFE",
+                "color": "#ef3b2c"
+              },
+              "all_parties": {
+                "DEM": 39684,
+                "REP": 52337,
+                "OTHER": 1815
+              }
+            },
+            "Wayne": {
+              "county": "Wayne",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 7669,
+              "rep_votes": 14425,
+              "other_votes": 618,
+              "total_votes": 22712,
+              "two_party_total": 22094,
+              "margin": -6756,
+              "margin_pct": -30.58,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Dominant Republican",
+                "party": "Republican",
+                "code": "R_DOMINANT",
+                "color": "#a50f15"
+              },
+              "all_parties": {
+                "DEM": 7669,
+                "REP": 14425,
+                "OTHER": 618
+              }
+            },
+            "Westmoreland": {
+              "county": "Westmoreland",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 66240,
+              "rep_votes": 98238,
+              "other_votes": 3531,
+              "total_votes": 168009,
+              "two_party_total": 164478,
+              "margin": -31998,
+              "margin_pct": -19.45,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Safe Republican",
+                "party": "Republican",
+                "code": "R_SAFE",
+                "color": "#ef3b2c"
+              },
+              "all_parties": {
+                "DEM": 66240,
+                "REP": 98238,
+                "OTHER": 3531
+              }
+            },
+            "Wyoming": {
+              "county": "Wyoming",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 4059,
+              "rep_votes": 7338,
+              "other_votes": 382,
+              "total_votes": 11779,
+              "two_party_total": 11397,
+              "margin": -3279,
+              "margin_pct": -28.77,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Stronghold Republican",
+                "party": "Republican",
+                "code": "R_STRONGHOLD",
+                "color": "#cb181d"
+              },
+              "all_parties": {
+                "DEM": 4059,
+                "REP": 7338,
+                "OTHER": 382
+              }
+            },
+            "York": {
+              "county": "York",
+              "contest": "United States Senator",
+              "year": "2022",
+              "dem_candidate": "John Fetterman",
+              "rep_candidate": "Mehmet Oz",
+              "dem_votes": 71929,
+              "rep_votes": 109631,
+              "other_votes": 4991,
+              "total_votes": 186551,
+              "two_party_total": 181560,
+              "margin": -37702,
+              "margin_pct": -20.77,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Stronghold Republican",
+                "party": "Republican",
+                "code": "R_STRONGHOLD",
+                "color": "#cb181d"
+              },
+              "all_parties": {
+                "DEM": 71929,
+                "REP": 109631,
+                "OTHER": 4991
+              }
+            }
+          }
+        }
+      },
+      "governor": {
+        "governor_2022": {
+          "contest_name": "Governor",
+          "results": {
+            "Adams": {
+              "county": "Adams",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 18821,
+              "rep_votes": 26819,
+              "other_votes": 819,
+              "total_votes": 46459,
+              "two_party_total": 45640,
+              "margin": -7998,
+              "margin_pct": -17.52,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Safe Republican",
+                "party": "Republican",
+                "code": "R_SAFE",
+                "color": "#ef3b2c"
+              },
+              "all_parties": {
+                "DEM": 18821,
+                "REP": 26819,
+                "OTHER": 819
+              }
+            },
+            "Allegheny": {
+              "county": "Allegheny",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 393386,
+              "rep_votes": 169913,
+              "other_votes": 9514,
+              "total_votes": 572813,
+              "two_party_total": 563299,
+              "margin": 223473,
+              "margin_pct": 39.67,
+              "winner": "DEM",
+              "competitiveness": {
+                "category": "Dominant Democratic",
+                "party": "Democratic",
+                "code": "D_DOMINANT",
+                "color": "#08519c"
+              },
+              "all_parties": {
+                "DEM": 393386,
+                "REP": 169913,
+                "OTHER": 9514
+              }
+            },
+            "Armstrong": {
+              "county": "Armstrong",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 9523,
+              "rep_votes": 18419,
+              "other_votes": 515,
+              "total_votes": 28457,
+              "two_party_total": 27942,
+              "margin": -8896,
+              "margin_pct": -31.84,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Dominant Republican",
+                "party": "Republican",
+                "code": "R_DOMINANT",
+                "color": "#a50f15"
+              },
+              "all_parties": {
+                "DEM": 9523,
+                "REP": 18419,
+                "OTHER": 515
+              }
+            },
+            "Beaver": {
+              "county": "Beaver",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 36917,
+              "rep_votes": 34777,
+              "other_votes": 1568,
+              "total_votes": 73262,
+              "two_party_total": 71694,
+              "margin": 2140,
+              "margin_pct": 2.98,
+              "winner": "DEM",
+              "competitiveness": {
+                "category": "Lean Democratic",
+                "party": "Democratic",
+                "code": "D_LEAN",
+                "color": "#c6dbef"
+              },
+              "all_parties": {
+                "DEM": 36917,
+                "REP": 34777,
+                "OTHER": 1568
+              }
+            },
+            "Bedford": {
+              "county": "Bedford",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 4721,
+              "rep_votes": 17198,
+              "other_votes": 301,
+              "total_votes": 22220,
+              "two_party_total": 21919,
+              "margin": -12477,
+              "margin_pct": -56.92,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Annihilation Republican",
+                "party": "Republican",
+                "code": "R_ANNIHILATION",
+                "color": "#67000d"
+              },
+              "all_parties": {
+                "DEM": 4721,
+                "REP": 17198,
+                "OTHER": 301
+              }
+            },
+            "Berks": {
+              "county": "Berks",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 78757,
+              "rep_votes": 72185,
+              "other_votes": 3876,
+              "total_votes": 154818,
+              "two_party_total": 150942,
+              "margin": 6572,
+              "margin_pct": 4.35,
+              "winner": "DEM",
+              "competitiveness": {
+                "category": "Lean Democratic",
+                "party": "Democratic",
+                "code": "D_LEAN",
+                "color": "#c6dbef"
+              },
+              "all_parties": {
+                "DEM": 78757,
+                "REP": 72185,
+                "OTHER": 3876
+              }
+            },
+            "Blair": {
+              "county": "Blair",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 17716,
+              "rep_votes": 31823,
+              "other_votes": 795,
+              "total_votes": 50334,
+              "two_party_total": 49539,
+              "margin": -14107,
+              "margin_pct": -28.48,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Stronghold Republican",
+                "party": "Republican",
+                "code": "R_STRONGHOLD",
+                "color": "#cb181d"
+              },
+              "all_parties": {
+                "DEM": 17716,
+                "REP": 31823,
+                "OTHER": 795
+              }
+            },
+            "Bradford": {
+              "county": "Bradford",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 7389,
+              "rep_votes": 15529,
+              "other_votes": 561,
+              "total_votes": 23479,
+              "two_party_total": 22918,
+              "margin": -8140,
+              "margin_pct": -35.52,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Dominant Republican",
+                "party": "Republican",
+                "code": "R_DOMINANT",
+                "color": "#a50f15"
+              },
+              "all_parties": {
+                "DEM": 7389,
+                "REP": 15529,
+                "OTHER": 561
+              }
+            },
+            "Bucks": {
+              "county": "Bucks",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 185339,
+              "rep_votes": 122982,
+              "other_votes": 5720,
+              "total_votes": 314041,
+              "two_party_total": 308321,
+              "margin": 62357,
+              "margin_pct": 20.22,
+              "winner": "DEM",
+              "competitiveness": {
+                "category": "Stronghold Democratic",
+                "party": "Democratic",
+                "code": "D_STRONGHOLD",
+                "color": "#3182bd"
+              },
+              "all_parties": {
+                "DEM": 185339,
+                "REP": 122982,
+                "OTHER": 5720
+              }
+            },
+            "Butler": {
+              "county": "Butler",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 40065,
+              "rep_votes": 51546,
+              "other_votes": 1850,
+              "total_votes": 93461,
+              "two_party_total": 91611,
+              "margin": -11481,
+              "margin_pct": -12.53,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Safe Republican",
+                "party": "Republican",
+                "code": "R_SAFE",
+                "color": "#ef3b2c"
+              },
+              "all_parties": {
+                "DEM": 40065,
+                "REP": 51546,
+                "OTHER": 1850
+              }
+            },
+            "Cambria": {
+              "county": "Cambria",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 22885,
+              "rep_votes": 32381,
+              "other_votes": 1015,
+              "total_votes": 56281,
+              "two_party_total": 55266,
+              "margin": -9496,
+              "margin_pct": -17.18,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Safe Republican",
+                "party": "Republican",
+                "code": "R_SAFE",
+                "color": "#ef3b2c"
+              },
+              "all_parties": {
+                "DEM": 22885,
+                "REP": 32381,
+                "OTHER": 1015
+              }
+            },
+            "Cameron": {
+              "county": "Cameron",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 639,
+              "rep_votes": 1200,
+              "other_votes": 51,
+              "total_votes": 1890,
+              "two_party_total": 1839,
+              "margin": -561,
+              "margin_pct": -30.51,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Dominant Republican",
+                "party": "Republican",
+                "code": "R_DOMINANT",
+                "color": "#a50f15"
+              },
+              "all_parties": {
+                "DEM": 639,
+                "REP": 1200,
+                "OTHER": 51
+              }
+            },
+            "Carbon": {
+              "county": "Carbon",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 10743,
+              "rep_votes": 14943,
+              "other_votes": 578,
+              "total_votes": 26264,
+              "two_party_total": 25686,
+              "margin": -4200,
+              "margin_pct": -16.35,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Safe Republican",
+                "party": "Republican",
+                "code": "R_SAFE",
+                "color": "#ef3b2c"
+              },
+              "all_parties": {
+                "DEM": 10743,
+                "REP": 14943,
+                "OTHER": 578
+              }
+            },
+            "Centre": {
+              "county": "Centre",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 35653,
+              "rep_votes": 25201,
+              "other_votes": 1163,
+              "total_votes": 62017,
+              "two_party_total": 60854,
+              "margin": 10452,
+              "margin_pct": 17.18,
+              "winner": "DEM",
+              "competitiveness": {
+                "category": "Safe Democratic",
+                "party": "Democratic",
+                "code": "D_SAFE",
+                "color": "#6baed6"
+              },
+              "all_parties": {
+                "DEM": 35653,
+                "REP": 25201,
+                "OTHER": 1163
+              }
+            },
+            "Chester": {
+              "county": "Chester",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 160796,
+              "rep_votes": 92585,
+              "other_votes": 4644,
+              "total_votes": 258025,
+              "two_party_total": 253381,
+              "margin": 68211,
+              "margin_pct": 26.92,
+              "winner": "DEM",
+              "competitiveness": {
+                "category": "Stronghold Democratic",
+                "party": "Democratic",
+                "code": "D_STRONGHOLD",
+                "color": "#3182bd"
+              },
+              "all_parties": {
+                "DEM": 160796,
+                "REP": 92585,
+                "OTHER": 4644
+              }
+            },
+            "Clarion": {
+              "county": "Clarion",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 5114,
+              "rep_votes": 10019,
+              "other_votes": 274,
+              "total_votes": 15407,
+              "two_party_total": 15133,
+              "margin": -4905,
+              "margin_pct": -32.41,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Dominant Republican",
+                "party": "Republican",
+                "code": "R_DOMINANT",
+                "color": "#a50f15"
+              },
+              "all_parties": {
+                "DEM": 5114,
+                "REP": 10019,
+                "OTHER": 274
+              }
+            },
+            "Clearfield": {
+              "county": "Clearfield",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 10326,
+              "rep_votes": 20525,
+              "other_votes": 560,
+              "total_votes": 31411,
+              "two_party_total": 30851,
+              "margin": -10199,
+              "margin_pct": -33.06,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Dominant Republican",
+                "party": "Republican",
+                "code": "R_DOMINANT",
+                "color": "#a50f15"
+              },
+              "all_parties": {
+                "DEM": 10326,
+                "REP": 20525,
+                "OTHER": 560
+              }
+            },
+            "Clinton": {
+              "county": "Clinton",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 5293,
+              "rep_votes": 8512,
+              "other_votes": 268,
+              "total_votes": 14073,
+              "two_party_total": 13805,
+              "margin": -3219,
+              "margin_pct": -23.32,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Stronghold Republican",
+                "party": "Republican",
+                "code": "R_STRONGHOLD",
+                "color": "#cb181d"
+              },
+              "all_parties": {
+                "DEM": 5293,
+                "REP": 8512,
+                "OTHER": 268
+              }
+            },
+            "Columbia": {
+              "county": "Columbia",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 10148,
+              "rep_votes": 13959,
+              "other_votes": 596,
+              "total_votes": 24703,
+              "two_party_total": 24107,
+              "margin": -3811,
+              "margin_pct": -15.81,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Safe Republican",
+                "party": "Republican",
+                "code": "R_SAFE",
+                "color": "#ef3b2c"
+              },
+              "all_parties": {
+                "DEM": 10148,
+                "REP": 13959,
+                "OTHER": 596
+              }
+            },
+            "Crawford": {
+              "county": "Crawford",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 12609,
+              "rep_votes": 19541,
+              "other_votes": 679,
+              "total_votes": 32829,
+              "two_party_total": 32150,
+              "margin": -6932,
+              "margin_pct": -21.56,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Stronghold Republican",
+                "party": "Republican",
+                "code": "R_STRONGHOLD",
+                "color": "#cb181d"
+              },
+              "all_parties": {
+                "DEM": 12609,
+                "REP": 19541,
+                "OTHER": 679
+              }
+            },
+            "Cumberland": {
+              "county": "Cumberland",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 61319,
+              "rep_votes": 52280,
+              "other_votes": 2403,
+              "total_votes": 116002,
+              "two_party_total": 113599,
+              "margin": 9039,
+              "margin_pct": 7.96,
+              "winner": "DEM",
+              "competitiveness": {
+                "category": "Likely Democratic",
+                "party": "Democratic",
+                "code": "D_LIKELY",
+                "color": "#9ecae1"
+              },
+              "all_parties": {
+                "DEM": 61319,
+                "REP": 52280,
+                "OTHER": 2403
+              }
+            },
+            "Dauphin": {
+              "county": "Dauphin",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 68585,
+              "rep_votes": 43580,
+              "other_votes": 2233,
+              "total_votes": 114398,
+              "two_party_total": 112165,
+              "margin": 25005,
+              "margin_pct": 22.29,
+              "winner": "DEM",
+              "competitiveness": {
+                "category": "Stronghold Democratic",
+                "party": "Democratic",
+                "code": "D_STRONGHOLD",
+                "color": "#3182bd"
+              },
+              "all_parties": {
+                "DEM": 68585,
+                "REP": 43580,
+                "OTHER": 2233
+              }
+            },
+            "Delaware": {
+              "county": "Delaware",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 170162,
+              "rep_votes": 76880,
+              "other_votes": 3813,
+              "total_votes": 250855,
+              "two_party_total": 247042,
+              "margin": 93282,
+              "margin_pct": 37.76,
+              "winner": "DEM",
+              "competitiveness": {
+                "category": "Dominant Democratic",
+                "party": "Democratic",
+                "code": "D_DOMINANT",
+                "color": "#08519c"
+              },
+              "all_parties": {
+                "DEM": 170162,
+                "REP": 76880,
+                "OTHER": 3813
+              }
+            },
+            "Elk": {
+              "county": "Elk",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 4843,
+              "rep_votes": 8597,
+              "other_votes": 238,
+              "total_votes": 13678,
+              "two_party_total": 13440,
+              "margin": -3754,
+              "margin_pct": -27.93,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Stronghold Republican",
+                "party": "Republican",
+                "code": "R_STRONGHOLD",
+                "color": "#cb181d"
+              },
+              "all_parties": {
+                "DEM": 4843,
+                "REP": 8597,
+                "OTHER": 238
+              }
+            },
+            "Erie": {
+              "county": "Erie",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 63081,
+              "rep_votes": 40433,
+              "other_votes": 2085,
+              "total_votes": 105599,
+              "two_party_total": 103514,
+              "margin": 22648,
+              "margin_pct": 21.88,
+              "winner": "DEM",
+              "competitiveness": {
+                "category": "Stronghold Democratic",
+                "party": "Democratic",
+                "code": "D_STRONGHOLD",
+                "color": "#3182bd"
+              },
+              "all_parties": {
+                "DEM": 63081,
+                "REP": 40433,
+                "OTHER": 2085
+              }
+            },
+            "Fayette": {
+              "county": "Fayette",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 20120,
+              "rep_votes": 26165,
+              "other_votes": 592,
+              "total_votes": 46877,
+              "two_party_total": 46285,
+              "margin": -6045,
+              "margin_pct": -13.06,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Safe Republican",
+                "party": "Republican",
+                "code": "R_SAFE",
+                "color": "#ef3b2c"
+              },
+              "all_parties": {
+                "DEM": 20120,
+                "REP": 26165,
+                "OTHER": 592
+              }
+            },
+            "Forest": {
+              "county": "Forest",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 825,
+              "rep_votes": 1340,
+              "other_votes": 27,
+              "total_votes": 2192,
+              "two_party_total": 2165,
+              "margin": -515,
+              "margin_pct": -23.79,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Stronghold Republican",
+                "party": "Republican",
+                "code": "R_STRONGHOLD",
+                "color": "#cb181d"
+              },
+              "all_parties": {
+                "DEM": 825,
+                "REP": 1340,
+                "OTHER": 27
+              }
+            },
+            "Franklin": {
+              "county": "Franklin",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 21612,
+              "rep_votes": 42731,
+              "other_votes": 1007,
+              "total_votes": 65350,
+              "two_party_total": 64343,
+              "margin": -21119,
+              "margin_pct": -32.82,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Dominant Republican",
+                "party": "Republican",
+                "code": "R_DOMINANT",
+                "color": "#a50f15"
+              },
+              "all_parties": {
+                "DEM": 21612,
+                "REP": 42731,
+                "OTHER": 1007
+              }
+            },
+            "Fulton": {
+              "county": "Fulton",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 1128,
+              "rep_votes": 5092,
+              "other_votes": 67,
+              "total_votes": 6287,
+              "two_party_total": 6220,
+              "margin": -3964,
+              "margin_pct": -63.73,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Annihilation Republican",
+                "party": "Republican",
+                "code": "R_ANNIHILATION",
+                "color": "#67000d"
+              },
+              "all_parties": {
+                "DEM": 1128,
+                "REP": 5092,
+                "OTHER": 67
+              }
+            },
+            "Greene": {
+              "county": "Greene",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 5142,
+              "rep_votes": 7706,
+              "other_votes": 291,
+              "total_votes": 13139,
+              "two_party_total": 12848,
+              "margin": -2564,
+              "margin_pct": -19.96,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Safe Republican",
+                "party": "Republican",
+                "code": "R_SAFE",
+                "color": "#ef3b2c"
+              },
+              "all_parties": {
+                "DEM": 5142,
+                "REP": 7706,
+                "OTHER": 291
+              }
+            },
+            "Huntingdon": {
+              "county": "Huntingdon",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 5597,
+              "rep_votes": 12579,
+              "other_votes": 272,
+              "total_votes": 18448,
+              "two_party_total": 18176,
+              "margin": -6982,
+              "margin_pct": -38.41,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Dominant Republican",
+                "party": "Republican",
+                "code": "R_DOMINANT",
+                "color": "#a50f15"
+              },
+              "all_parties": {
+                "DEM": 5597,
+                "REP": 12579,
+                "OTHER": 272
+              }
+            },
+            "Indiana": {
+              "county": "Indiana",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 13032,
+              "rep_votes": 19179,
+              "other_votes": 531,
+              "total_votes": 32742,
+              "two_party_total": 32211,
+              "margin": -6147,
+              "margin_pct": -19.08,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Safe Republican",
+                "party": "Republican",
+                "code": "R_SAFE",
+                "color": "#ef3b2c"
+              },
+              "all_parties": {
+                "DEM": 13032,
+                "REP": 19179,
+                "OTHER": 531
+              }
+            },
+            "Jefferson": {
+              "county": "Jefferson",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 5038,
+              "rep_votes": 12433,
+              "other_votes": 349,
+              "total_votes": 17820,
+              "two_party_total": 17471,
+              "margin": -7395,
+              "margin_pct": -42.33,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Annihilation Republican",
+                "party": "Republican",
+                "code": "R_ANNIHILATION",
+                "color": "#67000d"
+              },
+              "all_parties": {
+                "DEM": 5038,
+                "REP": 12433,
+                "OTHER": 349
+              }
+            },
+            "Juniata": {
+              "county": "Juniata",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 2761,
+              "rep_votes": 6851,
+              "other_votes": 156,
+              "total_votes": 9768,
+              "two_party_total": 9612,
+              "margin": -4090,
+              "margin_pct": -42.55,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Annihilation Republican",
+                "party": "Republican",
+                "code": "R_ANNIHILATION",
+                "color": "#67000d"
+              },
+              "all_parties": {
+                "DEM": 2761,
+                "REP": 6851,
+                "OTHER": 156
+              }
+            },
+            "Lackawanna": {
+              "county": "Lackawanna",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 54442,
+              "rep_votes": 32697,
+              "other_votes": 1704,
+              "total_votes": 88843,
+              "two_party_total": 87139,
+              "margin": 21745,
+              "margin_pct": 24.95,
+              "winner": "DEM",
+              "competitiveness": {
+                "category": "Stronghold Democratic",
+                "party": "Democratic",
+                "code": "D_STRONGHOLD",
+                "color": "#3182bd"
+              },
+              "all_parties": {
+                "DEM": 54442,
+                "REP": 32697,
+                "OTHER": 1704
+              }
+            },
+            "Lancaster": {
+              "county": "Lancaster",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 108233,
+              "rep_votes": 112040,
+              "other_votes": 3995,
+              "total_votes": 224268,
+              "two_party_total": 220273,
+              "margin": -3807,
+              "margin_pct": -1.73,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Lean Republican",
+                "party": "Republican",
+                "code": "R_LEAN",
+                "color": "#fcae91"
+              },
+              "all_parties": {
+                "DEM": 108233,
+                "REP": 112040,
+                "OTHER": 3995
+              }
+            },
+            "Lawrence": {
+              "county": "Lawrence",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 16023,
+              "rep_votes": 19611,
+              "other_votes": 660,
+              "total_votes": 36294,
+              "two_party_total": 35634,
+              "margin": -3588,
+              "margin_pct": -10.07,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Safe Republican",
+                "party": "Republican",
+                "code": "R_SAFE",
+                "color": "#ef3b2c"
+              },
+              "all_parties": {
+                "DEM": 16023,
+                "REP": 19611,
+                "OTHER": 660
+              }
+            },
+            "Lebanon": {
+              "county": "Lebanon",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 23646,
+              "rep_votes": 31731,
+              "other_votes": 1089,
+              "total_votes": 56466,
+              "two_party_total": 55377,
+              "margin": -8085,
+              "margin_pct": -14.6,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Safe Republican",
+                "party": "Republican",
+                "code": "R_SAFE",
+                "color": "#ef3b2c"
+              },
+              "all_parties": {
+                "DEM": 23646,
+                "REP": 31731,
+                "OTHER": 1089
+              }
+            },
+            "Lehigh": {
+              "county": "Lehigh",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 79991,
+              "rep_votes": 53468,
+              "other_votes": 2875,
+              "total_votes": 136334,
+              "two_party_total": 133459,
+              "margin": 26523,
+              "margin_pct": 19.87,
+              "winner": "DEM",
+              "competitiveness": {
+                "category": "Safe Democratic",
+                "party": "Democratic",
+                "code": "D_SAFE",
+                "color": "#6baed6"
+              },
+              "all_parties": {
+                "DEM": 79991,
+                "REP": 53468,
+                "OTHER": 2875
+              }
+            },
+            "Luzerne": {
+              "county": "Luzerne",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 57598,
+              "rep_votes": 56326,
+              "other_votes": 2140,
+              "total_votes": 116064,
+              "two_party_total": 113924,
+              "margin": 1272,
+              "margin_pct": 1.12,
+              "winner": "DEM",
+              "competitiveness": {
+                "category": "Lean Democratic",
+                "party": "Democratic",
+                "code": "D_LEAN",
+                "color": "#c6dbef"
+              },
+              "all_parties": {
+                "DEM": 57598,
+                "REP": 56326,
+                "OTHER": 2140
+              }
+            },
+            "Lycoming": {
+              "county": "Lycoming",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 15643,
+              "rep_votes": 29755,
+              "other_votes": 887,
+              "total_votes": 46285,
+              "two_party_total": 45398,
+              "margin": -14112,
+              "margin_pct": -31.09,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Dominant Republican",
+                "party": "Republican",
+                "code": "R_DOMINANT",
+                "color": "#a50f15"
+              },
+              "all_parties": {
+                "DEM": 15643,
+                "REP": 29755,
+                "OTHER": 887
+              }
+            },
+            "Mckean": {
+              "county": "Mckean",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 4392,
+              "rep_votes": 10082,
+              "other_votes": 238,
+              "total_votes": 14712,
+              "two_party_total": 14474,
+              "margin": -5690,
+              "margin_pct": -39.31,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Dominant Republican",
+                "party": "Republican",
+                "code": "R_DOMINANT",
+                "color": "#a50f15"
+              },
+              "all_parties": {
+                "DEM": 4392,
+                "REP": 10082,
+                "OTHER": 238
+              }
+            },
+            "Mercer": {
+              "county": "Mercer",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 18282,
+              "rep_votes": 26273,
+              "other_votes": 776,
+              "total_votes": 45331,
+              "two_party_total": 44555,
+              "margin": -7991,
+              "margin_pct": -17.94,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Safe Republican",
+                "party": "Republican",
+                "code": "R_SAFE",
+                "color": "#ef3b2c"
+              },
+              "all_parties": {
+                "DEM": 18282,
+                "REP": 26273,
+                "OTHER": 776
+              }
+            },
+            "Mifflin": {
+              "county": "Mifflin",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 5119,
+              "rep_votes": 11460,
+              "other_votes": 268,
+              "total_votes": 16847,
+              "two_party_total": 16579,
+              "margin": -6341,
+              "margin_pct": -38.25,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Dominant Republican",
+                "party": "Republican",
+                "code": "R_DOMINANT",
+                "color": "#a50f15"
+              },
+              "all_parties": {
+                "DEM": 5119,
+                "REP": 11460,
+                "OTHER": 268
+              }
+            },
+            "Monroe": {
+              "county": "Monroe",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 32009,
+              "rep_votes": 25604,
+              "other_votes": 1214,
+              "total_votes": 58827,
+              "two_party_total": 57613,
+              "margin": 6405,
+              "margin_pct": 11.12,
+              "winner": "DEM",
+              "competitiveness": {
+                "category": "Safe Democratic",
+                "party": "Democratic",
+                "code": "D_SAFE",
+                "color": "#6baed6"
+              },
+              "all_parties": {
+                "DEM": 32009,
+                "REP": 25604,
+                "OTHER": 1214
+              }
+            },
+            "Montgomery": {
+              "county": "Montgomery",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 285712,
+              "rep_votes": 121289,
+              "other_votes": 6015,
+              "total_votes": 413016,
+              "two_party_total": 407001,
+              "margin": 164423,
+              "margin_pct": 40.4,
+              "winner": "DEM",
+              "competitiveness": {
+                "category": "Annihilation Democratic",
+                "party": "Democratic",
+                "code": "D_ANNIHILATION",
+                "color": "#08306b"
+              },
+              "all_parties": {
+                "DEM": 285712,
+                "REP": 121289,
+                "OTHER": 6015
+              }
+            },
+            "Montour": {
+              "county": "Montour",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 3640,
+              "rep_votes": 4037,
+              "other_votes": 180,
+              "total_votes": 7857,
+              "two_party_total": 7677,
+              "margin": -397,
+              "margin_pct": -5.17,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Lean Republican",
+                "party": "Republican",
+                "code": "R_LEAN",
+                "color": "#fcae91"
+              },
+              "all_parties": {
+                "DEM": 3640,
+                "REP": 4037,
+                "OTHER": 180
+              }
+            },
+            "Northampton": {
+              "county": "Northampton",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 72269,
+              "rep_votes": 54928,
+              "other_votes": 2704,
+              "total_votes": 129901,
+              "two_party_total": 127197,
+              "margin": 17341,
+              "margin_pct": 13.63,
+              "winner": "DEM",
+              "competitiveness": {
+                "category": "Safe Democratic",
+                "party": "Democratic",
+                "code": "D_SAFE",
+                "color": "#6baed6"
+              },
+              "all_parties": {
+                "DEM": 72269,
+                "REP": 54928,
+                "OTHER": 2704
+              }
+            },
+            "Northumberland": {
+              "county": "Northumberland",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 12052,
+              "rep_votes": 19094,
+              "other_votes": 1805,
+              "total_votes": 32951,
+              "two_party_total": 31146,
+              "margin": -7042,
+              "margin_pct": -22.61,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Stronghold Republican",
+                "party": "Republican",
+                "code": "R_STRONGHOLD",
+                "color": "#cb181d"
+              },
+              "all_parties": {
+                "DEM": 12052,
+                "REP": 19094,
+                "OTHER": 1805
+              }
+            },
+            "Perry": {
+              "county": "Perry",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 6912,
+              "rep_votes": 12928,
+              "other_votes": 400,
+              "total_votes": 20240,
+              "two_party_total": 19840,
+              "margin": -6016,
+              "margin_pct": -30.32,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Dominant Republican",
+                "party": "Republican",
+                "code": "R_DOMINANT",
+                "color": "#a50f15"
+              },
+              "all_parties": {
+                "DEM": 6912,
+                "REP": 12928,
+                "OTHER": 400
+              }
+            },
+            "Philadelphia": {
+              "county": "Philadelphia",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 426885,
+              "rep_votes": 65293,
+              "other_votes": 6082,
+              "total_votes": 498260,
+              "two_party_total": 492178,
+              "margin": 361592,
+              "margin_pct": 73.47,
+              "winner": "DEM",
+              "competitiveness": {
+                "category": "Annihilation Democratic",
+                "party": "Democratic",
+                "code": "D_ANNIHILATION",
+                "color": "#08306b"
+              },
+              "all_parties": {
+                "DEM": 426885,
+                "REP": 65293,
+                "OTHER": 6082
+              }
+            },
+            "Pike": {
+              "county": "Pike",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 10339,
+              "rep_votes": 14371,
+              "other_votes": 423,
+              "total_votes": 25133,
+              "two_party_total": 24710,
+              "margin": -4032,
+              "margin_pct": -16.32,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Safe Republican",
+                "party": "Republican",
+                "code": "R_SAFE",
+                "color": "#ef3b2c"
+              },
+              "all_parties": {
+                "DEM": 10339,
+                "REP": 14371,
+                "OTHER": 423
+              }
+            },
+            "Potter": {
+              "county": "Potter",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 1513,
+              "rep_votes": 5235,
+              "other_votes": 357,
+              "total_votes": 7105,
+              "two_party_total": 6748,
+              "margin": -3722,
+              "margin_pct": -55.16,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Annihilation Republican",
+                "party": "Republican",
+                "code": "R_ANNIHILATION",
+                "color": "#67000d"
+              },
+              "all_parties": {
+                "DEM": 1513,
+                "REP": 5235,
+                "OTHER": 357
+              }
+            },
+            "Schuylkill": {
+              "county": "Schuylkill",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 21203,
+              "rep_votes": 33008,
+              "other_votes": 1224,
+              "total_votes": 55435,
+              "two_party_total": 54211,
+              "margin": -11805,
+              "margin_pct": -21.78,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Stronghold Republican",
+                "party": "Republican",
+                "code": "R_STRONGHOLD",
+                "color": "#cb181d"
+              },
+              "all_parties": {
+                "DEM": 21203,
+                "REP": 33008,
+                "OTHER": 1224
+              }
+            },
+            "Snyder": {
+              "county": "Snyder",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 4867,
+              "rep_votes": 10215,
+              "other_votes": 278,
+              "total_votes": 15360,
+              "two_party_total": 15082,
+              "margin": -5348,
+              "margin_pct": -35.46,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Dominant Republican",
+                "party": "Republican",
+                "code": "R_DOMINANT",
+                "color": "#a50f15"
+              },
+              "all_parties": {
+                "DEM": 4867,
+                "REP": 10215,
+                "OTHER": 278
+              }
+            },
+            "Somerset": {
+              "county": "Somerset",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 9473,
+              "rep_votes": 22559,
+              "other_votes": 544,
+              "total_votes": 32576,
+              "two_party_total": 32032,
+              "margin": -13086,
+              "margin_pct": -40.85,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Annihilation Republican",
+                "party": "Republican",
+                "code": "R_ANNIHILATION",
+                "color": "#67000d"
+              },
+              "all_parties": {
+                "DEM": 9473,
+                "REP": 22559,
+                "OTHER": 544
+              }
+            },
+            "Sullivan": {
+              "county": "Sullivan",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 1024,
+              "rep_votes": 1923,
+              "other_votes": 76,
+              "total_votes": 3023,
+              "two_party_total": 2947,
+              "margin": -899,
+              "margin_pct": -30.51,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Dominant Republican",
+                "party": "Republican",
+                "code": "R_DOMINANT",
+                "color": "#a50f15"
+              },
+              "all_parties": {
+                "DEM": 1024,
+                "REP": 1923,
+                "OTHER": 76
+              }
+            },
+            "Susquehanna": {
+              "county": "Susquehanna",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 5768,
+              "rep_votes": 11153,
+              "other_votes": 395,
+              "total_votes": 17316,
+              "two_party_total": 16921,
+              "margin": -5385,
+              "margin_pct": -31.82,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Dominant Republican",
+                "party": "Republican",
+                "code": "R_DOMINANT",
+                "color": "#a50f15"
+              },
+              "all_parties": {
+                "DEM": 5768,
+                "REP": 11153,
+                "OTHER": 395
+              }
+            },
+            "Tioga": {
+              "county": "Tioga",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 4494,
+              "rep_votes": 11840,
+              "other_votes": 324,
+              "total_votes": 16658,
+              "two_party_total": 16334,
+              "margin": -7346,
+              "margin_pct": -44.97,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Annihilation Republican",
+                "party": "Republican",
+                "code": "R_ANNIHILATION",
+                "color": "#67000d"
+              },
+              "all_parties": {
+                "DEM": 4494,
+                "REP": 11840,
+                "OTHER": 324
+              }
+            },
+            "Union": {
+              "county": "Union",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 6898,
+              "rep_votes": 8897,
+              "other_votes": 318,
+              "total_votes": 16113,
+              "two_party_total": 15795,
+              "margin": -1999,
+              "margin_pct": -12.66,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Safe Republican",
+                "party": "Republican",
+                "code": "R_SAFE",
+                "color": "#ef3b2c"
+              },
+              "all_parties": {
+                "DEM": 6898,
+                "REP": 8897,
+                "OTHER": 318
+              }
+            },
+            "Venango": {
+              "county": "Venango",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 7777,
+              "rep_votes": 12741,
+              "other_votes": 401,
+              "total_votes": 20919,
+              "two_party_total": 20518,
+              "margin": -4964,
+              "margin_pct": -24.19,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Stronghold Republican",
+                "party": "Republican",
+                "code": "R_STRONGHOLD",
+                "color": "#cb181d"
+              },
+              "all_parties": {
+                "DEM": 7777,
+                "REP": 12741,
+                "OTHER": 401
+              }
+            },
+            "Warren": {
+              "county": "Warren",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 6032,
+              "rep_votes": 9704,
+              "other_votes": 329,
+              "total_votes": 16065,
+              "two_party_total": 15736,
+              "margin": -3672,
+              "margin_pct": -23.34,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Stronghold Republican",
+                "party": "Republican",
+                "code": "R_STRONGHOLD",
+                "color": "#cb181d"
+              },
+              "all_parties": {
+                "DEM": 6032,
+                "REP": 9704,
+                "OTHER": 329
+              }
+            },
+            "Washington": {
+              "county": "Washington",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 45030,
+              "rep_votes": 47052,
+              "other_votes": 1535,
+              "total_votes": 93617,
+              "two_party_total": 92082,
+              "margin": -2022,
+              "margin_pct": -2.2,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Lean Republican",
+                "party": "Republican",
+                "code": "R_LEAN",
+                "color": "#fcae91"
+              },
+              "all_parties": {
+                "DEM": 45030,
+                "REP": 47052,
+                "OTHER": 1535
+              }
+            },
+            "Wayne": {
+              "county": "Wayne",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 8466,
+              "rep_votes": 13868,
+              "other_votes": 409,
+              "total_votes": 22743,
+              "two_party_total": 22334,
+              "margin": -5402,
+              "margin_pct": -24.19,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Stronghold Republican",
+                "party": "Republican",
+                "code": "R_STRONGHOLD",
+                "color": "#cb181d"
+              },
+              "all_parties": {
+                "DEM": 8466,
+                "REP": 13868,
+                "OTHER": 409
+              }
+            },
+            "Westmoreland": {
+              "county": "Westmoreland",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 77152,
+              "rep_votes": 87804,
+              "other_votes": 3012,
+              "total_votes": 167968,
+              "two_party_total": 164956,
+              "margin": -10652,
+              "margin_pct": -6.46,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Likely Republican",
+                "party": "Republican",
+                "code": "R_LIKELY",
+                "color": "#fb6a4a"
+              },
+              "all_parties": {
+                "DEM": 77152,
+                "REP": 87804,
+                "OTHER": 3012
+              }
+            },
+            "Wyoming": {
+              "county": "Wyoming",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 4519,
+              "rep_votes": 6966,
+              "other_votes": 292,
+              "total_votes": 11777,
+              "two_party_total": 11485,
+              "margin": -2447,
+              "margin_pct": -21.31,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Stronghold Republican",
+                "party": "Republican",
+                "code": "R_STRONGHOLD",
+                "color": "#cb181d"
+              },
+              "all_parties": {
+                "DEM": 4519,
+                "REP": 6966,
+                "OTHER": 292
+              }
+            },
+            "York": {
+              "county": "York",
+              "contest": "Governor",
+              "year": "2022",
+              "dem_candidate": "Josh Shapiro",
+              "rep_candidate": "Douglas V. Mastriano",
+              "dem_votes": 83649,
+              "rep_votes": 98622,
+              "other_votes": 4205,
+              "total_votes": 186476,
+              "two_party_total": 182271,
+              "margin": -14973,
+              "margin_pct": -8.21,
+              "winner": "REP",
+              "competitiveness": {
+                "category": "Likely Republican",
+                "party": "Republican",
+                "code": "R_LIKELY",
+                "color": "#fb6a4a"
+              },
+              "all_parties": {
+                "DEM": 83649,
+                "REP": 98622,
+                "OTHER": 4205
               }
             }
           }
