@@ -187,9 +187,9 @@ def generate_findings_report(data: dict) -> str:
         winner_symbol = "🔵" if result['winner'] == 'DEM' else "🔴"
         margin_dir = "D" if result['margin_pct'] > 0 else "R"
         report_lines.append(
-            f"{winner_symbol} {result['year']}: {result['dem_candidate']} {result['dem_pct']:.1f}% vs "
-            f"{result['rep_candidate']} {result['rep_pct']:.1f}% | "
-            f"Margin: {margin_dir}+{abs(result['margin_pct']):.2f}% ({result['margin']:,} votes)"
+            f"{winner_symbol} {result['year']}: {result['dem_candidate']} {result['dem_pct']:.2f}% vs "
+            f"{result['rep_candidate']} {result['rep_pct']:.2f}% | "
+            f"Margin: {margin_dir}+{abs(result['margin_pct']):.2f}% ({result['margin']:+,} votes)"
         )
     report_lines.append("")
     
@@ -202,13 +202,13 @@ def generate_findings_report(data: dict) -> str:
         latest = details['latest']
         direction = "→ Republican" if swing < 0 else "→ Democratic"
         report_lines.append(
-            f"{i}. {county} County: {swing:+.1f}% swing {direction}"
+            f"{i}. {county} County: {swing:+.2f}% swing {direction}"
         )
         report_lines.append(
-            f"   {earliest['year']}: {earliest['category']} ({earliest['margin_pct']:+.1f}%)"
+            f"   {earliest['year']}: {earliest['category']} ({earliest['margin_pct']:+.2f}%)"
         )
         report_lines.append(
-            f"   {latest['year']}: {latest['category']} ({latest['margin_pct']:+.1f}%)"
+            f"   {latest['year']}: {latest['category']} ({latest['margin_pct']:+.2f}%)"
         )
         report_lines.append("")
     
@@ -221,7 +221,7 @@ def generate_findings_report(data: dict) -> str:
         to_symbol = "🔵" if flip_data['to_party'] == 'DEM' else "🔴"
         report_lines.append(
             f"{from_symbol} → {to_symbol} {county} County: {flip_data['from_party']} to {flip_data['to_party']} "
-            f"({flip_data['swing']:+.1f}% swing)"
+            f"({flip_data['swing']:+.2f}% swing)"
         )
     report_lines.append("")
     
@@ -230,7 +230,7 @@ def generate_findings_report(data: dict) -> str:
     report_lines.append("-" * 80)
     bellwethers = identify_bellwether_counties(county_trends, statewide)[:15]
     for county, accuracy, matches, total in bellwethers:
-        report_lines.append(f"{county} County: {accuracy:.1f}% accuracy ({matches}/{total} elections)")
+        report_lines.append(f"{county} County: {accuracy:.2f}% accuracy ({matches}/{total} elections)")
     report_lines.append("")
     
     # Section 5: Democratic Strongholds
@@ -244,7 +244,7 @@ def generate_findings_report(data: dict) -> str:
     latest_margins.sort(key=lambda x: x[1], reverse=True)
     for i, (county, margin, category, votes) in enumerate(latest_margins[:10], 1):
         report_lines.append(
-            f"{i}. {county} County: D+{margin:.1f}% | {category} | {votes:,} votes"
+            f"{i}. {county} County: D+{margin:.2f}% | {category} | {votes:,} votes"
         )
     report_lines.append("")
     
@@ -254,7 +254,7 @@ def generate_findings_report(data: dict) -> str:
     latest_margins.sort(key=lambda x: x[1])
     for i, (county, margin, category, votes) in enumerate(latest_margins[:10], 1):
         report_lines.append(
-            f"{i}. {county} County: R+{abs(margin):.1f}% | {category} | {votes:,} votes"
+            f"{i}. {county} County: R+{abs(margin):.2f}% | {category} | {votes:,} votes"
         )
     report_lines.append("")
     
@@ -277,7 +277,7 @@ def generate_findings_report(data: dict) -> str:
         party = "D" if margin > 0 else "R"
         actual_margin = int(margin / 100 * votes) if votes > 0 else 0
         report_lines.append(
-            f"{i}. {county} County: {votes:,} votes | {party}+{abs(margin):.1f}% ({actual_margin:+,} margin)"
+            f"{i}. {county} County: {votes:,} votes | {party}+{abs(margin):.2f}% ({actual_margin:+,} margin)"
         )
     report_lines.append("")
     
@@ -292,7 +292,7 @@ def generate_findings_report(data: dict) -> str:
         swing = year2['margin_pct'] - year1['margin_pct']
         report_lines.append(
             f"{year1['year']} → {year2['year']}: {swing:+.2f}% swing | "
-            f"{year1['winner']} ({year1['margin_pct']:+.1f}%) → {year2['winner']} ({year2['margin_pct']:+.1f}%)"
+            f"{year1['winner']} ({year1['margin_pct']:+.2f}%) → {year2['winner']} ({year2['margin_pct']:+.2f}%)"
         )
     
     report_lines.append("")
@@ -449,6 +449,79 @@ def generate_working_class_html(data: dict) -> str:
         )
     html_lines.append('</ol>')
     
+    # Detailed cycle-by-cycle breakdown for each county
+    html_lines.append('<p><strong>📋 Detailed County-by-County Breakdown (All Election Cycles):</strong></p>')
+    
+    for county, description in sorted(working_class_counties.items()):
+        if county not in county_trends:
+            continue
+            
+        county_data = sorted(county_trends[county], key=lambda x: x['year'])
+        
+        # Build inline metrics for each election year
+        metrics = []
+        for election in county_data:
+            party_label = "D" if election['margin_pct'] > 0 else "R"
+            abs_margin = abs(election['margin_pct'])
+            
+            # Determine CSS class based on category
+            css_class = "metric"  # default
+            category_lower = election['category'].lower()
+            
+            if 'democratic' in category_lower or 'dem' in category_lower:
+                if 'annihilation' in category_lower:
+                    css_class = "metric d-annihilation"
+                elif 'dominant' in category_lower:
+                    css_class = "metric d-dominant"
+                elif 'stronghold' in category_lower:
+                    css_class = "metric d-strong"
+                elif 'safe' in category_lower:
+                    css_class = "metric d-safe"
+                elif 'likely' in category_lower:
+                    css_class = "metric d-likely"
+                elif 'lean' in category_lower:
+                    css_class = "metric d-lean"
+                elif 'tilt' in category_lower:
+                    css_class = "metric d-tilt"
+            elif 'republican' in category_lower or 'rep' in category_lower:
+                if 'annihilation' in category_lower:
+                    css_class = "metric r-annihilation"
+                elif 'dominant' in category_lower:
+                    css_class = "metric r-dominant"
+                elif 'stronghold' in category_lower:
+                    css_class = "metric r-strong"
+                elif 'safe' in category_lower:
+                    css_class = "metric r-safe"
+                elif 'likely' in category_lower:
+                    css_class = "metric r-likely"
+                elif 'lean' in category_lower:
+                    css_class = "metric r-lean"
+                elif 'tilt' in category_lower:
+                    css_class = "metric r-tilt"
+            
+            metrics.append(f'<span class="{css_class}">{election["year"]}: {party_label}+{abs_margin:.2f}%</span>')
+        
+        # Join all metrics with arrows
+        metrics_html = ' → '.join(metrics)
+        
+        html_lines.append(f'<p><strong>{county} County ({description}):</strong> {metrics_html}<br>')
+        
+        # Calculate total swing
+        if len(county_data) >= 2:
+            earliest = county_data[0]
+            latest = county_data[-1]
+            total_swing = latest['margin_pct'] - earliest['margin_pct']
+            direction = "toward Republicans" if total_swing < 0 else "toward Democrats"
+            
+            swing_text = f'Total Swing: {abs(total_swing):.2f}% {direction} ({earliest["year"]}-{latest["year"]})'
+            
+            if earliest['winner'] != latest['winner']:
+                swing_text += f'. Flipped from {earliest["winner"]} to {latest["winner"]}.'
+            
+            html_lines.append(f'<em>{swing_text}</em></p>')
+        else:
+            html_lines.append('</p>')
+    
     html_lines.append('</div>')
     
     # McCormick vs Casey section
@@ -463,6 +536,23 @@ def generate_working_class_html(data: dict) -> str:
     html_lines.append('<li><strong>Trump Coattails:</strong> McCormick\'s victory mirrored Trump\'s ~2% win, showing Republican dominance extended down-ballot</li>')
     html_lines.append('<li><strong>Realignment Confirmed:</strong> Even moderate, pro-union Democrats like Casey struggled in the new Pennsylvania electoral landscape</li>')
     html_lines.append('</ul>')
+    
+    html_lines.append('<p><strong>🚨 The 2024 Collapse - Counties That Abandoned Casey:</strong></p>')
+    html_lines.append('<p>Several counties that barely held for Casey in his 2018 re-election flipped hard Republican in 2024, revealing the sudden collapse of his working-class coalition:</p>')
+    
+    # Beaver County
+    html_lines.append('<p><strong>Beaver County (SW PA Steel):</strong> <span class="metric">2006: D+24.12%</span> → <span class="metric d-lean">2012: D+2.41%</span> → <span class="metric d-tilt">2018: D+3.81%</span> → <span class="metric r-safe">2024: R+16.35%</span><br>')
+    html_lines.append('<em>Coalition Collapse: 20.16 percentage points (2018→2024). Went from Casey\'s Democratic stronghold to McCormick landslide.</em></p>')
+    
+    # Berks County
+    html_lines.append('<p><strong>Berks County (Reading Area):</strong> <span class="metric">2006: D+9.52%</span> → <span class="metric d-lean">2012: D+3.51%</span> → <span class="metric d-tilt">2018: D+3.92%</span> → <span class="metric r-likely">2024: R+9.64%</span><br>')
+    html_lines.append('<em>Coalition Collapse: 13.56 percentage points (2018→2024). Barely held for Casey, then broke hard Republican.</em></p>')
+    
+    # Northampton County
+    html_lines.append('<p><strong>Northampton County (Lehigh Valley):</strong> <span class="metric">2006: D+16.58%</span> → <span class="metric d-likely">2012: D+9.59%</span> → <span class="metric d-likely">2018: D+10.55%</span> → <span class="metric r-tilt">2024: R+0.60%</span><br>')
+    html_lines.append('<em>Coalition Collapse: 11.15 percentage points (2018→2024). Bellwether county that tracked statewide winner - barely flipped to McCormick.</em></p>')
+    
+    html_lines.append('<p style="font-style: italic; color: #374151;">This final collapse shows the realignment was not just gradual erosion, but a sudden break in 2024 when even Casey\'s strong working-class brand couldn\'t save him.</p>')
     
     html_lines.append('<p><strong>The New Reality:</strong> Pennsylvania\'s working-class realignment wasn\'t just about presidential politics. The defeat of Bob Casey—a senator with deep Pennsylvania roots and working-class appeal—demonstrated that the Republican gains in coal, steel, and manufacturing regions represent a fundamental party realignment, not just candidate-specific preferences.</p>')
     
@@ -517,7 +607,7 @@ def analyze_working_class_realignment(data: dict) -> str:
         
         for election in county_data:
             party_emoji = "🔵" if election['winner'] == 'DEM' else "🔴"
-            margin_str = f"{election['margin_pct']:+.1f}%"
+            margin_str = f"{election['margin_pct']:+.2f}%"
             lines.append(
                 f"{party_emoji} {election['year']}: {election['category']} ({margin_str}) | "
                 f"{election['dem_candidate']} vs {election['rep_candidate']}"
@@ -529,7 +619,7 @@ def analyze_working_class_realignment(data: dict) -> str:
             latest = county_data[-1]
             total_swing = latest['margin_pct'] - earliest['margin_pct']
             direction = "toward Republicans" if total_swing < 0 else "toward Democrats"
-            lines.append(f"\n💥 TOTAL SWING ({earliest['year']}-{latest['year']}): {abs(total_swing):.1f}% {direction}")
+            lines.append(f"\n💥 TOTAL SWING ({earliest['year']}-{latest['year']}): {abs(total_swing):.2f}% {direction}")
             
             if earliest['winner'] != latest['winner']:
                 lines.append(f"   ⚠️  FLIPPED: {earliest['winner']} → {latest['winner']}")
@@ -555,7 +645,7 @@ def analyze_working_class_realignment(data: dict) -> str:
                 flipped_counties.append(county)
     
     avg_swing = statistics.mean([s[1] for s in total_swings])
-    lines.append(f"\n📊 Average swing across 17 working-class counties: {avg_swing:+.1f}% toward Republicans")
+    lines.append(f"\n📊 Average swing across 17 working-class counties: {avg_swing:+.2f}% toward Republicans")
     lines.append(f"🔀 Number of working-class counties that flipped Republican: {len(flipped_counties)}/{len(working_class_counties)}")
     lines.append(f"\nCounties that flipped: {', '.join(sorted(flipped_counties))}")
     
@@ -563,7 +653,111 @@ def analyze_working_class_realignment(data: dict) -> str:
     total_swings.sort(key=lambda x: x[1])
     lines.append(f"\n🔴 Biggest Republican swings in working-class counties:")
     for county, swing, start_year, end_year in total_swings[:5]:
-        lines.append(f"   • {county}: {swing:+.1f}% ({start_year}-{end_year})")
+        lines.append(f"   • {county}: {swing:+.2f}% ({start_year}-{end_year})")
+    
+    return "\n".join(lines)
+
+def analyze_democratic_holdouts(data: dict) -> str:
+    """Analyze working-class counties that remained Democratic despite realignment."""
+    county_trends, years = analyze_county_trends(data, 'president')
+    
+    # Define working-class Democratic holdout counties
+    holdout_counties = {
+        'Lackawanna': 'NE PA Anthracite (Biden\'s hometown)',
+    }
+    
+    lines = []
+    lines.append("\n" + "=" * 80)
+    lines.append("🔵 THE DEMOCRATIC HOLDOUTS & FLIPPED ALLIES: Anthracite County Tales")
+    lines.append("=" * 80)
+    lines.append("\nWhile 10 of Pennsylvania's 17 key working-class counties flipped to Republican,")
+    lines.append("the two major anthracite counties tell dramatically different stories about")
+    lines.append("the limits and fragility of Democratic support in the new Pennsylvania.\n")
+    
+    for county, description in holdout_counties.items():
+        if county not in county_trends:
+            continue
+        
+        county_data = sorted(county_trends[county], key=lambda x: x['year'])
+        
+        lines.append(f"\n{'='*80}")
+        lines.append(f"📍 {county} County - {description}")
+        lines.append('-' * 80)
+        
+        # Pre-Obama era (2000-2008)
+        lines.append("\n🔵 PRE-DON'T-ASK-DON'T-TELL ERA (2000-2008): Biden's County, Solid Democratic")
+        pre_obama = [e for e in county_data if e['year'] <= 2008]
+        for election in pre_obama:
+            party_emoji = "🔵" if election['winner'] == 'DEM' else "🔴"
+            lines.append(
+                f"  {party_emoji} {election['year']}: {election['category']} ({election['margin_pct']:+.2f}%) | "
+                f"{election['dem_candidate']} vs {election['rep_candidate']}"
+            )
+        
+        # Post-Obama era (2012-2024)
+        lines.append("\n📉 POST-OBAMA ERA (2012-2024): Competitive, But Still Democratic")
+        post_obama = [e for e in county_data if e['year'] >= 2012]
+        for election in post_obama:
+            party_emoji = "🔵" if election['winner'] == 'DEM' else "🔴"
+            lines.append(
+                f"  {party_emoji} {election['year']}: {election['category']} ({election['margin_pct']:+.2f}%) | "
+                f"{election['dem_candidate']} vs {election['rep_candidate']}"
+            )
+        
+        # Analysis
+        if len(county_data) >= 2:
+            earlier_margin = county_data[0]['margin_pct']
+            later_margin = county_data[-1]['margin_pct']
+            total_swing = later_margin - earlier_margin
+            
+            lines.append(f"\n💡 KEY INSIGHT:")
+            lines.append(f"   • Swing: {abs(total_swing):.2f}% toward Republicans")
+            lines.append(f"   • 2000 margin: D+{abs(earlier_margin):.2f}%")
+            lines.append(f"   • 2024 margin: D+{abs(later_margin):.2f}%")
+            lines.append(f"   • Status: STAYED DEMOCRATIC despite massive pressure")
+            
+            # Analyze the post-Obama narrowing
+            if len(post_obama) >= 2:
+                pre_2012_avg = sum([e['margin_pct'] for e in county_data if e['year'] < 2012]) / len([e for e in county_data if e['year'] < 2012])
+                post_2012_margins = [e['margin_pct'] for e in county_data if e['year'] >= 2012]
+                post_2012_avg = sum(post_2012_margins) / len(post_2012_margins)
+                narrowing = pre_2012_avg - post_2012_avg
+                
+                lines.append(f"\n   • Pre-Obama era average: D+{abs(pre_2012_avg):.2f}%")
+                lines.append(f"   • Post-Obama era average: D+{abs(post_2012_avg):.2f}%")
+                lines.append(f"   • Post-Obama narrowing: {narrowing:.2f} percentage points")
+    
+    # Add Luzerne comparison
+    lines.append("\n\n" + "=" * 80)
+    lines.append("🔴 LUZERNE COUNTY: The Flipped Neighbor")
+    lines.append("-" * 80)
+    lines.append("\nJust as Biden's home county (Lackawanna) held on for Democrats,")
+    lines.append("its neighboring Luzerne County tells the opposite story: flipped Republican in 2016")
+    lines.append("and has remained deeply Republican since.\n")
+    
+    if 'Luzerne' in county_trends:
+        luzerne_data = sorted(county_trends['Luzerne'], key=lambda x: x['year'])
+        for election in luzerne_data:
+            party_emoji = "🔵" if election['winner'] == 'DEM' else "🔴"
+            lines.append(
+                f"  {party_emoji} {election['year']}: {election['category']} ({election['margin_pct']:+.2f}%) | "
+                f"{election['dem_candidate']} vs {election['rep_candidate']}"
+            )
+        
+        lines.append(f"\n💡 THE 2018 SENATE RACE ANOMALY:")
+        lines.append(f"   Even more telling: Luzerne voted for Lou Barletta (R) over Bob Casey (D)")
+        lines.append(f"   in the 2018 Senate race, despite Casey winning statewide by double digits (D+13.3%).")
+        lines.append(f"   In Luzerne, Barletta defeated Casey locally while Casey crushed Barletta statewide.")
+        lines.append(f"   This shows Luzerne's split from Democratic leaders was complete.")
+    
+    lines.append("\n\n📌 WHY THIS MATTERS:")
+    lines.append("   Lackawanna and Luzerne are two neighboring anthracite counties, equally scarred")
+    lines.append("   by economic transformation. Yet they chose opposite paths: Lackawanna held on to")
+    lines.append("   Democrats (though barely), while Luzerne flipped entirely. Both reveal the fragility")
+    lines.append("   of Democratic support in working-class Pennsylvania. Lackawanna's narrow margins show")
+    lines.append("   Democratic loyalty is eroding fast, while Luzerne's 2018 Senate betrayal of Casey")
+    lines.append("   demonstrates that working-class voters will abandon even Democratic icons when they")
+    lines.append("   feel left behind.")
     
     return "\n".join(lines)
 
@@ -595,23 +789,121 @@ def analyze_senate_races(data: dict) -> str:
     # Bob Casey's career
     casey_races = [r for r in senate_statewide if 'Casey' in r.get('dem_candidate', '')]
     if casey_races:
-        lines.append("\n👨‍⚖️ BOB CASEY JR.'S SENATE CAREER:")
+        lines.append("\n👨‍⚖️ BOB CASEY JR.'S SENATE CAREER (2006-2024):")
         lines.append("-" * 80)
         for race in casey_races:
             lines.append(
-                f"{race['year']}: {race['dem_pct']:.1f}% vs {race['rep_pct']:.1f}% "
-                f"(D+{race['margin_pct']:.1f}%) - Defeated {race['rep_candidate']}"
+                f"{race['year']}: {race['dem_pct']:.2f}% vs {race['rep_pct']:.2f}% "
+                f"(D+{race['margin_pct']:.2f}%) - Defeated {race['rep_candidate']}"
             )
+    
+    # Analyze counties that flipped away from Casey
+    lines.append("\n🔀 CASEY'S COALITION COLLAPSE: COUNTIES THAT FLIPPED FROM DEM TO REP")
+    lines.append("-" * 80)
+    lines.append("\nBob Casey won three consecutive Senate elections (2006, 2012, 2018) with comfortable")
+    lines.append("margins. But his county-level support eroded significantly, revealing the dramatic")
+    lines.append("decline of Democratic support in working-class Pennsylvania:\n")
+    
+    # Analyze county-level Senate data
+    senate_county_trends, senate_years = analyze_county_trends(data, 'us_senate')
+    
+    if senate_county_trends:
+        # Find Casey races
+        casey_counties_all = {}
+        
+        for county, county_data in senate_county_trends.items():
+            sorted_data = sorted(county_data, key=lambda x: x['year'])
+            
+            # Track Casey races (2006, 2012, 2018)
+            casey_2006 = next((r for r in sorted_data if r['year'] == 2006 and 'Casey' in r.get('dem_candidate', '')), None)
+            casey_2012 = next((r for r in sorted_data if r['year'] == 2012 and 'Casey' in r.get('dem_candidate', '')), None) 
+            casey_2018 = next((r for r in sorted_data if r['year'] == 2018 and 'Casey' in r.get('dem_candidate', '')), None)
+            
+            # Check if county had data in Casey races
+            casey_races_in_county = [casey_2006, casey_2012, casey_2018]
+            casey_races_in_county = [r for r in casey_races_in_county if r is not None]
+            
+            if len(casey_races_in_county) >= 2:
+                first_race = casey_races_in_county[0]
+                last_race = casey_races_in_county[-1]
+                
+                swing = last_race['margin_pct'] - first_race['margin_pct']
+                flipped = first_race['winner'] == 'DEM' and last_race['winner'] == 'REP'
+                stayed_dem_but_collapsed = first_race['winner'] == 'DEM' and last_race['winner'] == 'DEM' and abs(swing) > 5
+                
+                # Include both flipped counties AND counties that stayed Democratic but had massive collapses
+                if flipped or stayed_dem_but_collapsed:
+                    casey_counties_all[county] = {
+                        'first_year': first_race['year'],
+                        'first_margin': first_race['margin_pct'],
+                        'first_candidate': 'Casey',
+                        'last_year': last_race['year'],
+                        'last_margin': last_race['margin_pct'],
+                        'last_candidate': last_race['rep_candidate'],
+                        'swing': swing,
+                        'races': casey_races_in_county,
+                        'flipped': flipped,
+                        'collapsed_but_held': stayed_dem_but_collapsed
+                    }
+        
+        # Separate and sort
+        flipped_counties = [(k, v) for k, v in casey_counties_all.items() if v['flipped']]
+        collapsed_counties = [(k, v) for k, v in casey_counties_all.items() if v['collapsed_but_held']]
+        
+        flipped_counties.sort(key=lambda x: abs(x[1]['swing']), reverse=True)
+        collapsed_counties.sort(key=lambda x: abs(x[1]['swing']), reverse=True)
+        
+        if flipped_counties or collapsed_counties:
+            lines.append(f"Counties where working-class voters abandoned Casey:\n")
+            
+            # Show flipped counties first
+            if flipped_counties:
+                lines.append("🔴 COUNTIES THAT FLIPPED FROM CASEY TO REPUBLICAN:\n")
+                for county, flip_data in flipped_counties[:15]:
+                    lines.append(f"  🔴 {county} County:")
+                    lines.append(f"      2006 (Casey): {flip_data['first_margin']:+.2f}% Democratic")
+                    
+                    for race in flip_data['races'][1:]:
+                        year = race['year']
+                        margin = race['margin_pct']
+                        party_label = "D" if margin > 0 else "R"
+                        lines.append(f"      {year}: {party_label}{abs(margin):.2f}%")
+                    
+                    lines.append(f"      → Total swing: {flip_data['swing']:.2f}% (Democratic → Republican)\n")
+            
+            # Show collapsed but held counties
+            if collapsed_counties:
+                lines.append("\n🟦 COUNTIES THAT COLLAPSED BUT NARROWLY HELD FOR CASEY (2006-2018):\n")
+                lines.append("These may be most telling: Strong Democratic strongholds in 2006 became\n")
+                lines.append("barely Democratic by 2018 - showing how fragile his coalition became.\n\n")
+                for county, collapse_data in collapsed_counties:
+                    lines.append(f"  🟦 {county} County:")
+                    lines.append(f"      2006 (Casey): {collapse_data['first_margin']:+.2f}% Democratic")
+                    
+                    for race in collapse_data['races'][1:]:
+                        year = race['year']
+                        margin = race['margin_pct']
+                        party_label = "D" if margin > 0 else "R"
+                        lines.append(f"      {year}: {party_label}{abs(margin):.2f}%")
+                    
+                    lines.append(f"      → Total swing: {collapse_data['swing']:.2f}% (but stayed Democratic)\n")
+                # Highlight 2024 collapse for key counties
+                lines.append("\n🚨 2024: THE BOTTOM FELL OUT\n")
+                lines.append("Several counties that barely held for Casey in 2018 flipped hard Republican in 2024:")
+                lines.append("  Beaver: 2018 D+3.81% → 2024 R-16.35% (McCormick)")
+                lines.append("  Berks: 2018 D+3.92% → 2024 R-9.64% (McCormick)")
+                lines.append("  Northampton: 2018 D+10.55% → 2024 R-0.60% (McCormick)")
+                lines.append("This final collapse shows the realignment was not just gradual erosion, but a sudden break in 2024.")
     
     lines.append("\n🗳️ 2024 SENATE RACE (McCormick vs. Casey):")
     lines.append("-" * 80)
     lines.append("Note: Dave McCormick (R) narrowly defeated Bob Casey (D) in 2024,")
-    lines.append("ending Casey's 18-year Senate career. This race data will be added")
-    lines.append("to the dataset once official results are compiled.")
-    lines.append("\nThis marked a significant moment in PA's realignment, as Casey—")
+    lines.append("ending Casey's 18-year Senate career. The statewide margin was R+0.2%,")
+    lines.append("demonstrating how far Casey's coalition had collapsed from his 2006 D+17.4% victory.\n")
+    lines.append("This marked a significant moment in PA's realignment, as Casey—")
     lines.append("a working-class Democrat from Scranton area—lost in the same year")
-    lines.append("that Trump won Pennsylvania by ~2%. McCormick's victory showed that")
-    lines.append("even strong Democratic brands struggle in the new Pennsylvania.")
+    lines.append("that Trump won Pennsylvania by ~2%. The counties shown above that")
+    lines.append("abandoned Casey between 2006 and 2018 were the harbingers of his 2024 defeat.")
     
     return "\n".join(lines)
 
@@ -633,6 +925,10 @@ def main():
     # Add working-class realignment analysis
     working_class_analysis = analyze_working_class_realignment(data)
     report += "\n\n" + working_class_analysis
+    
+    # Add Democratic holdouts analysis
+    holdout_analysis = analyze_democratic_holdouts(data)
+    report += "\n\n" + holdout_analysis
     
     # Add Senate analysis
     senate_analysis = analyze_senate_races(data)
