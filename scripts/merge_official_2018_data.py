@@ -1,6 +1,6 @@
 """
-Merge official 2024 PA election data from CSV into pa_election_results.json
-Fills in missing county-level data for the 10 counties not in OpenElections precinct files.
+Merge official 2018 PA election data from CSV into pa_election_results.json
+Updates 2018 data with official county-level results.
 """
 
 import pandas as pd
@@ -53,6 +53,7 @@ def normalize_office_name(office):
         "Attorney General": "attorney_general",
         "Auditor General": "auditor_general",
         "State Treasurer": "state_treasurer",
+        "Governor": "governor",
     }
     return office_map.get(office, office.lower().replace(" ", "_"))
 
@@ -65,6 +66,7 @@ def get_full_office_name(office):
         "attorney_general": "Attorney General",
         "auditor_general": "Auditor General",
         "state_treasurer": "State Treasurer",
+        "governor": "Governor",
     }
     return office_map.get(office, office.title())
 
@@ -89,8 +91,8 @@ def aggregate_csv_data(df):
         candidate = row['Candidate Name'].title()
         votes = row['Votes']
         
-        if county not in aggregated[2024][office]:
-            aggregated[2024][office][county] = {
+        if county not in aggregated[2018][office]:
+            aggregated[2018][office][county] = {
                 "dem_votes": 0,
                 "rep_votes": 0,
                 "other_votes": 0,
@@ -100,19 +102,19 @@ def aggregate_csv_data(df):
         
         # Categorize by party
         if 'Democratic' in party:
-            aggregated[2024][office][county]["dem_votes"] += votes
-            aggregated[2024][office][county]["dem_candidate"] = candidate
+            aggregated[2018][office][county]["dem_votes"] += votes
+            aggregated[2018][office][county]["dem_candidate"] = candidate
         elif 'Republican' in party:
-            aggregated[2024][office][county]["rep_votes"] += votes
-            aggregated[2024][office][county]["rep_candidate"] = candidate
+            aggregated[2018][office][county]["rep_votes"] += votes
+            aggregated[2018][office][county]["rep_candidate"] = candidate
         else:
             # All other parties (Libertarian, Green, Constitution, etc.)
-            aggregated[2024][office][county]["other_votes"] += votes
+            aggregated[2018][office][county]["other_votes"] += votes
     
     return aggregated
 
 
-def format_result_entry(county_name, contest, office, data, year=2024):
+def format_result_entry(county_name, contest, office, data, year=2018):
     """Format a single result entry matching JSON structure."""
     dem_votes = data.get("dem_votes", 0)
     rep_votes = data.get("rep_votes", 0)
@@ -156,7 +158,7 @@ def merge_data():
     """Main merge function."""
     # Load paths
     json_file = Path(__file__).parent.parent / "data" / "pa_election_results.json"
-    csv_file = Path(__file__).parent.parent / "data" / "Official_2112026091549PM.CSV"
+    csv_file = Path(__file__).parent.parent / "data" / "Official_2112026093800PM.CSV"
     
     print(f"[INFO] Loading official CSV from {csv_file}...")
     csv_df = load_official_csv(csv_file)
@@ -171,40 +173,27 @@ def merge_data():
     with open(json_file, 'r') as f:
         data = json.load(f)
     
-    # Ensure 2024 is in metadata
-    if 2024 not in data.get("metadata", {}).get("years", []):
-        if "metadata" not in data:
-            data["metadata"] = {}
-        if "years" not in data["metadata"]:
-            data["metadata"]["years"] = []
-        if 2024 not in data["metadata"]["years"]:
-            data["metadata"]["years"].append(2024)
-            data["metadata"]["years"].sort()
-    
-    # Clear existing 2024 data
-    if 2024 in data["results_by_year"]:
-        print("[INFO] Clearing existing 2024 data...")
-        data["results_by_year"][2024] = {}
+    # Clear existing 2018 data
+    if '2018' in data["results_by_year"]:
+        print("[INFO] Clearing existing 2018 data...")
+        data["results_by_year"]['2018'] = {}
     else:
-        data["results_by_year"][2024] = {}
-        if "results_by_year" not in data:
-            data["results_by_year"] = {}
-        data["results_by_year"][2024] = {}
+        data["results_by_year"]['2018'] = {}
     
     # Track updates
     new_entries = 0
     counties_updated = set()
     
-    # Build 2024 data from scratch with proper structure
-    for office, counties in csv_aggregated[2024].items():
+    # Build 2018 data from scratch with proper structure
+    for office, counties in csv_aggregated[2018].items():
         # Initialize office structure
-        if office not in data["results_by_year"][2024]:
-            data["results_by_year"][2024][office] = {}
+        if office not in data["results_by_year"]['2018']:
+            data["results_by_year"]['2018'][office] = {}
         
-        contest_key = f"{office}_2024"
+        contest_key = f"{office}_2018"
         
         # Create contest entry
-        data["results_by_year"][2024][office][contest_key] = {
+        data["results_by_year"]['2018'][office][contest_key] = {
             "contest_name": get_full_office_name(office),
             "results": {}
         }
@@ -212,7 +201,7 @@ def merge_data():
         for county, county_data in counties.items():
             formatted = format_result_entry(county, contest_key, office, county_data)
             if formatted:
-                data["results_by_year"][2024][office][contest_key]["results"][county] = formatted
+                data["results_by_year"]['2018'][office][contest_key]["results"][county] = formatted
                 new_entries += 1
                 counties_updated.add(county)
     
@@ -222,15 +211,15 @@ def merge_data():
         json.dump(data, f, indent=2)
     
     # Count final coverage
-    counties_2024 = set()
-    for office in data["results_by_year"].get(2024, {}).values():
+    counties_2018 = set()
+    for office in data["results_by_year"].get('2018', {}).values():
         for contest in office.values():
-            counties_2024.update(contest.get("results", {}).keys())
+            counties_2018.update(contest.get("results", {}).keys())
     
     print(f"\n[SUCCESS] Merge complete!")
     print(f"  - Entries created: {new_entries}")
-    print(f"  - Unique counties with 2024 data: {len(counties_2024)}/67")
-    print(f"  - Sample counties: {sorted(list(counties_2024))[:5]}")
+    print(f"  - Unique counties with 2018 data: {len(counties_2018)}/67")
+    print(f"  - Contests included: {list(data['results_by_year']['2018'].keys())}")
 
 
 if __name__ == "__main__":
