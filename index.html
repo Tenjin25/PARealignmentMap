@@ -521,18 +521,24 @@ body {
   min-width: 60px;
   max-width: 60px;
   padding: 15px;
-  overflow: hidden;
+  position: relative;
+}
+.main-controls.minimized::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  z-index: -1;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
 }
 .main-controls.minimized .controls-content {
   display: none;
-}
-.main-controls.minimized .controls-header {
-  overflow: hidden;
-}
-.main-controls.minimized .controls-header h3 {
-  visibility: hidden;
-  width: 0;
-  margin: 0;
 }
 .controls-header {
   display: flex;
