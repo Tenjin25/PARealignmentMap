@@ -460,13 +460,16 @@ def generate_working_class_html(data: dict) -> str:
         
         # Build inline metrics for each election year
         metrics = []
-        for election in county_data:
+        first_winner = county_data[0]['winner'] if county_data else None  # Track if county started Democratic
+        
+        for idx, election in enumerate(county_data):
             party_label = "D" if election['margin_pct'] > 0 else "R"
             abs_margin = abs(election['margin_pct'])
             
             # Determine CSS class based on category
             css_class = "metric"  # default
             category_lower = election['category'].lower()
+            inline_style = ""  # Add inline style for red box if applicable
             
             if 'democratic' in category_lower or 'dem' in category_lower:
                 if 'annihilation' in category_lower:
@@ -498,8 +501,12 @@ def generate_working_class_html(data: dict) -> str:
                     css_class = "metric r-lean"
                 elif 'tilt' in category_lower:
                     css_class = "metric r-tilt"
+                
+                # Add red box styling for Republican results if county started Democratic
+                if first_winner == 'DEM' and idx > 0:
+                    inline_style = ' style="background: #fca5a5; color: #7f1d1d; border-color: #f87171;"'
             
-            metrics.append(f'<span class="{css_class}">{election["year"]}: {party_label}+{abs_margin:.2f}%</span>')
+            metrics.append(f'<span class="{css_class}"{inline_style}>{election["year"]}: {party_label}+{abs_margin:.2f}%</span>')
         
         # Join all metrics with arrows
         metrics_html = ' → '.join(metrics)
