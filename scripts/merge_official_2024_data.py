@@ -10,28 +10,35 @@ from collections import defaultdict
 
 def get_competitiveness(margin_pct):
     """Categorize race competitiveness based on Democratic margin percentage."""
-    if margin_pct > 40:
-        return {"category": "Annihilation", "party": "Democratic"}
-    elif margin_pct > 20:
-        return {"category": "Dominant", "party": "Democratic"}
-    elif margin_pct > 10:
-        return {"category": "Safe", "party": "Democratic"}
-    elif margin_pct > 5:
-        return {"category": "Likely", "party": "Democratic"}
-    elif margin_pct > 2:
-        return {"category": "Lean", "party": "Democratic"}
-    elif margin_pct > -2:
-        return {"category": "Tossup", "party": "Tossup"}
-    elif margin_pct > -5:
-        return {"category": "Lean", "party": "Republican"}
-    elif margin_pct > -10:
-        return {"category": "Likely", "party": "Republican"}
-    elif margin_pct > -20:
-        return {"category": "Safe", "party": "Republican"}
-    elif margin_pct > -40:
-        return {"category": "Dominant", "party": "Republican"}
-    else:
-        return {"category": "Annihilation", "party": "Republican"}
+    categories = [
+        (40, "Annihilation", "Democratic", "D_ANNIHILATION", "#08519c"),
+        (20, "Dominant", "Democratic", "D_DOMINANT", "#3182bd"),
+        (10, "Safe", "Democratic", "D_SAFE", "#6baed6"),
+        (5, "Likely", "Democratic", "D_LIKELY", "#9ecae1"),
+        (2, "Lean", "Democratic", "D_LEAN", "#c6dbef"),
+        (-2, "Tossup", "Tossup", "TOSSUP", "#f7f7f7"),
+        (-5, "Lean", "Republican", "R_LEAN", "#fee5d9"),
+        (-10, "Likely", "Republican", "R_LIKELY", "#fcae91"),
+        (-20, "Safe", "Republican", "R_SAFE", "#fb6a4a"),
+        (-40, "Dominant", "Republican", "R_DOMINANT", "#cb181d"),
+        (float('-inf'), "Annihilation", "Republican", "R_ANNIHILATION", "#67000d"),
+    ]
+    
+    for threshold, category, party, code, color in categories:
+        if margin_pct > threshold:
+            return {
+                "category": category,
+                "party": party,
+                "code": code,
+                "color": color
+            }
+    
+    return {
+        "category": "Annihilation",
+        "party": "Republican",
+        "code": "R_ANNIHILATION",
+        "color": "#67000d"
+    }
 
 
 def normalize_office_name(office):
@@ -44,6 +51,18 @@ def normalize_office_name(office):
         "State Treasurer": "state_treasurer",
     }
     return office_map.get(office, office.lower().replace(" ", "_"))
+
+
+def get_full_office_name(office):
+    """Get full office name for display."""
+    office_map = {
+        "president": "President of the United States",
+        "us_senate": "United States Senator",
+        "attorney_general": "Attorney General",
+        "auditor_general": "Auditor General",
+        "state_treasurer": "State Treasurer",
+    }
+    return office_map.get(office, office.title())
 
 
 def load_official_csv(csv_path):
@@ -66,8 +85,6 @@ def aggregate_csv_data(df):
         candidate = row['Candidate Name'].title()
         votes = row['Votes']
         
-        key = f"{office}_2024"
-        
         if county not in aggregated[2024][office]:
             aggregated[2024][office][county] = {
                 "dem_votes": 0,
@@ -78,13 +95,14 @@ def aggregate_csv_data(df):
             }
         
         # Categorize by party
-        if 'Democratic' in party or 'HARRIS' in candidate or 'CASEY' in candidate or 'DEPASQUALE' in candidate or 'KENYATTA' in candidate or 'MCCLELLAND' in candidate:
+        if 'Democratic' in party:
             aggregated[2024][office][county]["dem_votes"] += votes
             aggregated[2024][office][county]["dem_candidate"] = candidate
-        elif 'Republican' in party or 'TRUMP' in candidate or 'MCCORMICK' in candidate or 'SUNDAY' in candidate or 'DEFOOR' in candidate or 'GARRITY' in candidate:
+        elif 'Republican' in party:
             aggregated[2024][office][county]["rep_votes"] += votes
             aggregated[2024][office][county]["rep_candidate"] = candidate
         else:
+            # All other parties (Libertarian, Green, Constitution, etc.)
             aggregated[2024][office][county]["other_votes"] += votes
     
     return aggregated
@@ -94,24 +112,39 @@ def format_result_entry(county_name, contest, office, data, year=2024):
     """Format a single result entry matching JSON structure."""
     dem_votes = data.get("dem_votes", 0)
     rep_votes = data.get("rep_votes", 0)
-    total_votes = dem_votes + rep_votes
+    other_votes = data.get("other_votes", 0)
+    total_votes = dem_votes + rep_votes + other_votes
+    two_party_total = dem_votes + rep_votes
     
-    if total_votes == 0:
+    if two_party_total == 0:
         return None
     
     margin = dem_votes - rep_votes
-    margin_pct = (margin / total_votes * 100) if total_votes > 0 else 0
+    margin_pct = (margin / two_party_total * 100) if two_party_total > 0 else 0
+    
+    # Determine winner
+    winner = "DEM" if dem_votes > rep_votes else ("REP" if rep_votes > dem_votes else "TIE")
     
     return {
         "county": county_name,
-        "contest": office,
+        "contest": get_full_office_name(office),
+        "year": str(year),
         "dem_candidate": data.get("dem_candidate", "Unknown"),
         "rep_candidate": data.get("rep_candidate", "Unknown"),
         "dem_votes": dem_votes,
         "rep_votes": rep_votes,
+        "other_votes": other_votes,
+        "total_votes": total_votes,
+        "two_party_total": two_party_total,
         "margin": margin,
         "margin_pct": round(margin_pct, 2),
+        "winner": winner,
         "competitiveness": get_competitiveness(margin_pct),
+        "all_parties": {
+            "DEM": dem_votes,
+            "REP": rep_votes,
+            "OTHER": other_votes,
+        }
     }
 
 
@@ -134,41 +167,49 @@ def merge_data():
     with open(json_file, 'r') as f:
         data = json.load(f)
     
+    # Ensure 2024 is in metadata
+    if 2024 not in data.get("metadata", {}).get("years", []):
+        if "metadata" not in data:
+            data["metadata"] = {}
+        if "years" not in data["metadata"]:
+            data["metadata"]["years"] = []
+        if 2024 not in data["metadata"]["years"]:
+            data["metadata"]["years"].append(2024)
+            data["metadata"]["years"].sort()
+    
+    # Clear existing 2024 data
+    if 2024 in data["results_by_year"]:
+        print("[INFO] Clearing existing 2024 data...")
+        data["results_by_year"][2024] = {}
+    else:
+        data["results_by_year"][2024] = {}
+        if "results_by_year" not in data:
+            data["results_by_year"] = {}
+        data["results_by_year"][2024] = {}
+    
     # Track updates
-    update_count = 0
     new_entries = 0
     counties_updated = set()
     
-    # Merge 2024 data
+    # Build 2024 data from scratch with proper structure
     for office, counties in csv_aggregated[2024].items():
-        if 2024 not in data["results_by_year"]:
-            data["results_by_year"][2024] = {}
-        
+        # Initialize office structure
         if office not in data["results_by_year"][2024]:
             data["results_by_year"][2024][office] = {}
         
         contest_key = f"{office}_2024"
         
-        if contest_key not in data["results_by_year"][2024][office]:
-            data["results_by_year"][2024][office][contest_key] = {"results": {}}
+        # Create contest entry
+        data["results_by_year"][2024][office][contest_key] = {
+            "contest_name": get_full_office_name(office),
+            "results": {}
+        }
         
         for county, county_data in counties.items():
-            if county not in data["results_by_year"][2024][office][contest_key]["results"]:
-                # New entry
-                formatted = format_result_entry(county, contest_key, office, county_data)
-                if formatted:
-                    data["results_by_year"][2024][office][contest_key]["results"][county] = formatted
-                    new_entries += 1
-                    counties_updated.add(county)
-            else:
-                # Update existing (in case data is more complete)
-                data["results_by_year"][2024][office][contest_key]["results"][county].update({
-                    "dem_votes": county_data.get("dem_votes", 0),
-                    "rep_votes": county_data.get("rep_votes", 0),
-                    "dem_candidate": county_data.get("dem_candidate"),
-                    "rep_candidate": county_data.get("rep_candidate"),
-                })
-                update_count += 1
+            formatted = format_result_entry(county, contest_key, office, county_data)
+            if formatted:
+                data["results_by_year"][2024][office][contest_key]["results"][county] = formatted
+                new_entries += 1
                 counties_updated.add(county)
     
     # Save updated JSON
@@ -183,11 +224,9 @@ def merge_data():
             counties_2024.update(contest.get("results", {}).keys())
     
     print(f"\n[SUCCESS] Merge complete!")
-    print(f"  - New entries added: {new_entries}")
-    print(f"  - Entries updated: {update_count}")
-    print(f"  - Unique counties updated: {len(counties_updated)}")
-    print(f"  - Total PA counties with 2024 data: {len(counties_2024)}/67")
-    print(f"  - Counties updated: {sorted(counties_updated)}")
+    print(f"  - Entries created: {new_entries}")
+    print(f"  - Unique counties with 2024 data: {len(counties_2024)}/67")
+    print(f"  - Sample counties: {sorted(list(counties_2024))[:5]}")
 
 
 if __name__ == "__main__":
