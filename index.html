@@ -518,12 +518,21 @@ body {
   }
 }
 .main-controls.minimized {
-  min-width: auto;
-  max-width: none;
+  min-width: 60px;
+  max-width: 60px;
   padding: 15px;
+  overflow: hidden;
 }
 .main-controls.minimized .controls-content {
   display: none;
+}
+.main-controls.minimized .controls-header {
+  overflow: hidden;
+}
+.main-controls.minimized .controls-header h3 {
+  visibility: hidden;
+  width: 0;
+  margin: 0;
 }
 .controls-header {
   display: flex;
