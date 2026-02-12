@@ -1316,8 +1316,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     <script>
     // --- CONFIG ---
+    // To use this visualization, add your Mapbox token below:
+    // 1. Get free token at https://www.mapbox.com/account/tokens
+    // 2. Replace 'YOUR_MAPBOX_TOKEN_HERE' with your actual token
     const CONFIG = {
-      mapboxToken: process.env.MAPBOX_TOKEN || 'YOUR_MAPBOX_TOKEN_HERE',
+      mapboxToken: 'pk.eyJ1Ijoic2hhbWFyZGF2aXMiLCJhIjoiY21kcW8yeDB2MDhvbTJzb29qeGp1aDZmZCJ9.Zw_i6U-dL7_bEKRHTUh7yg',
       paths: {
         counties: './data/pa_counties.geojson',
         election: './data/pa_election_results.json'
