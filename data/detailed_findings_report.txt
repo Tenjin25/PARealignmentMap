@@ -1,0 +1,449 @@
+================================================================================
+DETAILED PENNSYLVANIA ELECTION ANALYSIS
+Generated from PA Election Results JSON Data
+================================================================================
+
+📊 STATEWIDE PRESIDENTIAL RESULTS
+--------------------------------------------------------------------------------
+🔵 2000: Al Gore 52.1% vs George W. Bush 47.9% | Margin: D+4.30% (204,840 votes)
+🔵 2004: John F. Kerry 51.3% vs George W. Bush 48.7% | Margin: D+2.52% (144,248 votes)
+🔵 2008: Barack Obama 55.2% vs John McCain 44.8% | Margin: D+10.46% (620,478 votes)
+🔵 2012: Barack Obama 52.7% vs Mitt Romney 47.3% | Margin: D+5.46% (309,840 votes)
+🔴 2016: Hillary Clinton 49.6% vs Donald J. Trump 50.4% | Margin: R+0.76% (-44,716 votes)
+🔵 2020: Joseph R. Biden 50.6% vs Donald J. Trump 49.4% | Margin: D+1.18% (80,555 votes)
+🔴 2024: Kamala D. Harris 49.1% vs Donald J. Trump 50.9% | Margin: R+1.73% (-120,266 votes)
+
+🔄 TOP 10 BIGGEST COUNTY SWINGS (2000-2024)
+--------------------------------------------------------------------------------
+1. Greene County: -55.9% swing → Republican
+   2000: Safe Democratic (+10.2%)
+   2024: Annihilation Republican (-45.7%)
+
+2. Fayette County: -55.0% swing → Republican
+   2000: Safe Democratic (+16.9%)
+   2024: Dominant Republican (-38.1%)
+
+3. Cambria County: -44.0% swing → Republican
+   2000: Lean Democratic (+4.0%)
+   2024: Dominant Republican (-40.0%)
+
+4. Lawrence County: -40.5% swing → Republican
+   2000: Likely Democratic (+6.5%)
+   2024: Dominant Republican (-34.0%)
+
+5. Carbon County: -39.8% swing → Republican
+   2000: Lean Democratic (+4.7%)
+   2024: Dominant Republican (-35.1%)
+
+6. Armstrong County: -37.1% swing → Republican
+   2000: Safe Republican (-16.4%)
+   2024: Annihilation Republican (-53.6%)
+
+7. Clinton County: -36.5% swing → Republican
+   2000: Lean Republican (-4.7%)
+   2024: Annihilation Republican (-41.2%)
+
+8. Schuylkill County: -36.0% swing → Republican
+   2000: Likely Republican (-6.5%)
+   2024: Annihilation Republican (-42.4%)
+
+9. Elk County: -35.2% swing → Republican
+   2000: Safe Republican (-12.2%)
+   2024: Annihilation Republican (-47.3%)
+
+10. Washington County: -34.9% swing → Republican
+   2000: Likely Democratic (+9.3%)
+   2024: Stronghold Republican (-25.7%)
+
+🔀 COUNTIES THAT FLIPPED PARTIES
+--------------------------------------------------------------------------------
+🔵 → 🔴 Greene County: DEM to REP (-55.9% swing)
+🔵 → 🔴 Fayette County: DEM to REP (-55.0% swing)
+🔵 → 🔴 Cambria County: DEM to REP (-44.0% swing)
+🔵 → 🔴 Lawrence County: DEM to REP (-40.5% swing)
+🔵 → 🔴 Carbon County: DEM to REP (-39.8% swing)
+🔵 → 🔴 Washington County: DEM to REP (-34.9% swing)
+🔵 → 🔴 Mercer County: DEM to REP (-31.9% swing)
+🔵 → 🔴 Beaver County: DEM to REP (-29.9% swing)
+🔵 → 🔴 Luzerne County: DEM to REP (-27.9% swing)
+🔴 → 🔵 Chester County: REP to DEM (+24.5% swing)
+🔴 → 🔵 Dauphin County: REP to DEM (+15.4% swing)
+🔴 → 🔵 Centre County: REP to DEM (+12.9% swing)
+🔵 → 🔴 Erie County: DEM to REP (-10.6% swing)
+🔵 → 🔴 Northampton County: DEM to REP (-7.5% swing)
+🔵 → 🔴 Bucks County: DEM to REP (-4.4% swing)
+
+🎯 BELLWETHER COUNTIES (Tracking Statewide Winner)
+--------------------------------------------------------------------------------
+Erie County: 100.0% accuracy (7/7 elections)
+Northampton County: 100.0% accuracy (7/7 elections)
+McKean County: 100.0% accuracy (1/1 elections)
+Bucks County: 85.7% accuracy (6/7 elections)
+Luzerne County: 85.7% accuracy (6/7 elections)
+Allegheny County: 71.4% accuracy (5/7 elections)
+Delaware County: 71.4% accuracy (5/7 elections)
+Lackawanna County: 71.4% accuracy (5/7 elections)
+Lehigh County: 71.4% accuracy (5/7 elections)
+Montgomery County: 71.4% accuracy (5/7 elections)
+Philadelphia County: 71.4% accuracy (5/7 elections)
+Beaver County: 57.1% accuracy (4/7 elections)
+Cambria County: 57.1% accuracy (4/7 elections)
+Carbon County: 57.1% accuracy (4/7 elections)
+Fayette County: 57.1% accuracy (4/7 elections)
+
+🔵 STRONGEST DEMOCRATIC COUNTIES (Latest Election)
+--------------------------------------------------------------------------------
+1. Philadelphia County: D+59.5% | Annihilation Democratic | 721,441 votes
+2. Delaware County: D+24.0% | Stronghold Democratic | 328,172 votes
+3. Montgomery County: D+23.1% | Stronghold Democratic | 520,906 votes
+4. Allegheny County: D+20.5% | Stronghold Democratic | 720,504 votes
+5. Chester County: D+14.6% | Safe Democratic | 324,964 votes
+6. Dauphin County: D+6.0% | Likely Democratic | 149,526 votes
+7. Centre County: D+2.9% | Lean Democratic | 80,792 votes
+8. Lackawanna County: D+2.8% | Lean Democratic | 116,590 votes
+9. Lehigh County: D+2.7% | Lean Democratic | 189,810 votes
+10. Bucks County: D+-0.1% | Tossup | 401,028 votes
+
+🔴 STRONGEST REPUBLICAN COUNTIES (Latest Election)
+--------------------------------------------------------------------------------
+1. Fulton County: R+72.9% | Annihilation Republican | 8,177 votes
+2. Bedford County: R+69.0% | Annihilation Republican | 28,160 votes
+3. Potter County: R+62.8% | Annihilation Republican | 9,085 votes
+4. Juniata County: R+61.9% | Annihilation Republican | 12,104 votes
+5. Jefferson County: R+59.0% | Annihilation Republican | 23,129 votes
+6. Somerset County: R+57.6% | Annihilation Republican | 40,881 votes
+7. Mifflin County: R+56.8% | Annihilation Republican | 22,071 votes
+8. Armstrong County: R+53.6% | Annihilation Republican | 37,119 votes
+9. Clarion County: R+53.4% | Annihilation Republican | 19,733 votes
+10. Huntingdon County: R+53.3% | Annihilation Republican | 23,156 votes
+
+⚖️ MOST COMPETITIVE COUNTIES (Closest Margins Latest Election)
+--------------------------------------------------------------------------------
+1. Bucks County: R+0.07% | Tossup | 401,028 votes
+2. Monroe County: R+0.79% | Tilt Republican | 85,525 votes
+3. Erie County: R+1.03% | Lean Republican | 137,595 votes
+4. Northampton County: R+1.79% | Lean Republican | 178,215 votes
+5. Lehigh County: D+2.72% | Lean Democratic | 189,810 votes
+6. Lackawanna County: D+2.81% | Lean Democratic | 116,590 votes
+7. Centre County: D+2.86% | Lean Democratic | 80,792 votes
+8. Dauphin County: D+5.99% | Likely Democratic | 149,526 votes
+9. Cumberland County: R+9.56% | Likely Republican | 148,396 votes
+10. Berks County: R+12.30% | Safe Republican | 209,838 votes
+
+📈 LARGEST COUNTIES BY TOTAL VOTES (Latest Election)
+--------------------------------------------------------------------------------
+1. Philadelphia County: 721,441 votes | D+59.5% (+429,329 margin)
+2. Allegheny County: 720,504 votes | D+20.5% (+147,775 margin)
+3. Montgomery County: 520,906 votes | D+23.1% (+120,068 margin)
+4. Bucks County: 401,028 votes | R+0.1% (-280 margin)
+5. Delaware County: 328,172 votes | D+24.0% (+78,728 margin)
+6. Chester County: 324,964 votes | D+14.6% (+47,477 margin)
+7. Lancaster County: 289,257 votes | R+16.1% (-46,599 margin)
+8. York County: 249,210 votes | R+25.5% (-63,573 margin)
+9. Westmoreland County: 211,450 votes | R+28.6% (-60,538 margin)
+10. Berks County: 209,838 votes | R+12.3% (-25,810 margin)
+11. Lehigh County: 189,810 votes | D+2.7% (+5,162 margin)
+12. Northampton County: 178,215 votes | R+1.8% (-3,190 margin)
+13. Luzerne County: 156,150 votes | R+19.3% (-30,168 margin)
+14. Dauphin County: 149,526 votes | D+6.0% (+8,956 margin)
+15. Cumberland County: 148,396 votes | R+9.6% (-14,186 margin)
+
+🔍 YEAR-OVER-YEAR SWING ANALYSIS
+--------------------------------------------------------------------------------
+2000 → 2004: -1.78% swing | DEM (+4.3%) → DEM (+2.5%)
+2004 → 2008: +7.94% swing | DEM (+2.5%) → DEM (+10.5%)
+2008 → 2012: -5.00% swing | DEM (+10.5%) → DEM (+5.5%)
+2012 → 2016: -6.22% swing | DEM (+5.5%) → REP (-0.8%)
+2016 → 2020: +1.94% swing | REP (-0.8%) → DEM (+1.2%)
+2020 → 2024: -2.90% swing | DEM (+1.2%) → REP (-1.7%)
+
+================================================================================
+END OF REPORT
+================================================================================
+
+🏭 WORKING-CLASS REALIGNMENT ANALYSIS
+================================================================================
+
+Tracking 17 key working-class counties (coal, steel, manufacturing) across all presidential cycles:
+
+
+================================================================================
+Armstrong County - SW PA Manufacturing
+--------------------------------------------------------------------------------
+🔴 2000: Safe Republican (-16.4%) | Al Gore vs George W. Bush
+🔴 2004: Stronghold Republican (-22.3%) | John F. Kerry vs George W. Bush
+🔴 2008: Stronghold Republican (-24.9%) | Barack Obama vs John McCain
+🔴 2012: Dominant Republican (-38.0%) | Barack Obama vs Mitt Romney
+🔴 2016: Annihilation Republican (-53.2%) | Hillary Clinton vs Donald J. Trump
+🔴 2020: Annihilation Republican (-53.0%) | Joseph R. Biden vs Donald J. Trump
+🔴 2024: Annihilation Republican (-53.6%) | Kamala D. Harris vs Donald J. Trump
+
+💥 TOTAL SWING (2000-2024): 37.1% toward Republicans
+
+================================================================================
+Beaver County - SW PA Steel
+--------------------------------------------------------------------------------
+🔵 2000: Likely Democratic (+9.0%) | Al Gore vs George W. Bush
+🔵 2004: Lean Democratic (+2.7%) | John F. Kerry vs George W. Bush
+🔴 2008: Lean Republican (-2.9%) | Barack Obama vs John McCain
+🔴 2012: Likely Republican (-6.7%) | Barack Obama vs Mitt Romney
+🔴 2016: Safe Republican (-19.4%) | Hillary Clinton vs Donald J. Trump
+🔴 2020: Safe Republican (-17.9%) | Joseph R. Biden vs Donald J. Trump
+🔴 2024: Stronghold Republican (-20.9%) | Kamala D. Harris vs Donald J. Trump
+
+💥 TOTAL SWING (2000-2024): 29.9% toward Republicans
+   ⚠️  FLIPPED: DEM → REP
+
+================================================================================
+Cambria County - SW PA Coal/Steel (Johnstown)
+--------------------------------------------------------------------------------
+🔵 2000: Lean Democratic (+4.0%) | Al Gore vs George W. Bush
+🔴 2004: Lean Republican (-2.2%) | John F. Kerry vs George W. Bush
+🔵 2008: Tilt Democratic (+0.7%) | Barack Obama vs John McCain
+🔴 2012: Safe Republican (-18.4%) | Barack Obama vs Mitt Romney
+🔴 2016: Dominant Republican (-38.3%) | Hillary Clinton vs Donald J. Trump
+🔴 2020: Dominant Republican (-37.8%) | Joseph R. Biden vs Donald J. Trump
+🔴 2024: Dominant Republican (-40.0%) | Kamala D. Harris vs Donald J. Trump
+
+💥 TOTAL SWING (2000-2024): 44.0% toward Republicans
+   ⚠️  FLIPPED: DEM → REP
+
+================================================================================
+Carbon County - NE PA Anthracite
+--------------------------------------------------------------------------------
+🔵 2000: Lean Democratic (+4.7%) | Al Gore vs George W. Bush
+🔴 2004: Lean Republican (-1.2%) | John F. Kerry vs George W. Bush
+🔵 2008: Lean Democratic (+1.9%) | Barack Obama vs John McCain
+🔴 2012: Likely Republican (-7.7%) | Barack Obama vs Mitt Romney
+🔴 2016: Dominant Republican (-35.4%) | Hillary Clinton vs Donald J. Trump
+🔴 2020: Dominant Republican (-32.5%) | Joseph R. Biden vs Donald J. Trump
+🔴 2024: Dominant Republican (-35.1%) | Kamala D. Harris vs Donald J. Trump
+
+💥 TOTAL SWING (2000-2024): 39.8% toward Republicans
+   ⚠️  FLIPPED: DEM → REP
+
+================================================================================
+Clearfield County - Central PACoal
+--------------------------------------------------------------------------------
+🔴 2000: Stronghold Republican (-21.2%) | Al Gore vs George W. Bush
+🔴 2004: Stronghold Republican (-20.6%) | John F. Kerry vs George W. Bush
+🔴 2008: Safe Republican (-12.4%) | Barack Obama vs John McCain
+🔴 2012: Stronghold Republican (-29.3%) | Barack Obama vs Mitt Romney
+🔴 2016: Annihilation Republican (-50.5%) | Hillary Clinton vs Donald J. Trump
+🔴 2020: Annihilation Republican (-50.2%) | Joseph R. Biden vs Donald J. Trump
+🔴 2024: Annihilation Republican (-51.9%) | Kamala D. Harris vs Donald J. Trump
+
+💥 TOTAL SWING (2000-2024): 30.7% toward Republicans
+
+================================================================================
+Erie County - NW PA Manufacturing
+--------------------------------------------------------------------------------
+🔵 2000: Likely Democratic (+9.6%) | Al Gore vs George W. Bush
+🔵 2004: Likely Democratic (+8.4%) | John F. Kerry vs George W. Bush
+🔵 2008: Stronghold Democratic (+20.2%) | Barack Obama vs John McCain
+🔵 2012: Safe Democratic (+16.2%) | Barack Obama vs Mitt Romney
+🔴 2016: Lean Republican (-1.7%) | Hillary Clinton vs Donald J. Trump
+🔵 2020: Lean Democratic (+1.1%) | Joseph R. Biden vs Donald J. Trump
+🔴 2024: Lean Republican (-1.0%) | Kamala D. Harris vs Donald J. Trump
+
+💥 TOTAL SWING (2000-2024): 10.6% toward Republicans
+   ⚠️  FLIPPED: DEM → REP
+
+================================================================================
+Fayette County - SW PA Coal/Steel
+--------------------------------------------------------------------------------
+🔵 2000: Safe Democratic (+16.9%) | Al Gore vs George W. Bush
+🔵 2004: Likely Democratic (+7.5%) | John F. Kerry vs George W. Bush
+🔴 2008: Tossup (-0.4%) | Barack Obama vs John McCain
+🔴 2012: Likely Republican (-8.4%) | Barack Obama vs Mitt Romney
+🔴 2016: Dominant Republican (-31.7%) | Hillary Clinton vs Donald J. Trump
+🔴 2020: Dominant Republican (-33.7%) | Joseph R. Biden vs Donald J. Trump
+🔴 2024: Dominant Republican (-38.1%) | Kamala D. Harris vs Donald J. Trump
+
+💥 TOTAL SWING (2000-2024): 55.0% toward Republicans
+   ⚠️  FLIPPED: DEM → REP
+
+================================================================================
+Greene County - SW PA Coal
+--------------------------------------------------------------------------------
+🔵 2000: Safe Democratic (+10.2%) | Al Gore vs George W. Bush
+🔴 2004: Tilt Republican (-0.7%) | John F. Kerry vs George W. Bush
+🔴 2008: Tossup (-0.4%) | Barack Obama vs John McCain
+🔴 2012: Safe Republican (-18.0%) | Barack Obama vs Mitt Romney
+🔴 2016: Annihilation Republican (-41.5%) | Hillary Clinton vs Donald J. Trump
+🔴 2020: Annihilation Republican (-43.8%) | Joseph R. Biden vs Donald J. Trump
+🔴 2024: Annihilation Republican (-45.7%) | Kamala D. Harris vs Donald J. Trump
+
+💥 TOTAL SWING (2000-2024): 55.9% toward Republicans
+   ⚠️  FLIPPED: DEM → REP
+
+================================================================================
+Indiana County - SW PA Coal/Manufacturing
+--------------------------------------------------------------------------------
+🔴 2000: Safe Republican (-10.3%) | Al Gore vs George W. Bush
+🔴 2004: Safe Republican (-12.3%) | John F. Kerry vs George W. Bush
+🔴 2008: Likely Republican (-7.2%) | Barack Obama vs John McCain
+🔴 2012: Safe Republican (-19.0%) | Barack Obama vs Mitt Romney
+🔴 2016: Dominant Republican (-36.7%) | Hillary Clinton vs Donald J. Trump
+🔴 2020: Dominant Republican (-38.0%) | Joseph R. Biden vs Donald J. Trump
+🔴 2024: Dominant Republican (-39.4%) | Kamala D. Harris vs Donald J. Trump
+
+💥 TOTAL SWING (2000-2024): 29.1% toward Republicans
+
+================================================================================
+Lackawanna County - NE PA Anthracite (Biden's hometown)
+--------------------------------------------------------------------------------
+🔵 2000: Stronghold Democratic (+24.2%) | Al Gore vs George W. Bush
+🔵 2004: Safe Democratic (+14.2%) | John F. Kerry vs George W. Bush
+🔵 2008: Stronghold Democratic (+26.2%) | Barack Obama vs John McCain
+🔵 2012: Stronghold Democratic (+27.6%) | Barack Obama vs Mitt Romney
+🔵 2016: Lean Democratic (+3.6%) | Hillary Clinton vs Donald J. Trump
+🔵 2020: Likely Democratic (+8.4%) | Joseph R. Biden vs Donald J. Trump
+🔵 2024: Lean Democratic (+2.8%) | Kamala D. Harris vs Donald J. Trump
+
+💥 TOTAL SWING (2000-2024): 21.4% toward Republicans
+
+================================================================================
+Lawrence County - SW PA Manufacturing
+--------------------------------------------------------------------------------
+🔵 2000: Likely Democratic (+6.5%) | Al Gore vs George W. Bush
+🔴 2004: Lean Republican (-1.3%) | John F. Kerry vs George W. Bush
+🔴 2008: Lean Republican (-5.2%) | Barack Obama vs John McCain
+🔴 2012: Likely Republican (-9.2%) | Barack Obama vs Mitt Romney
+🔴 2016: Stronghold Republican (-29.0%) | Hillary Clinton vs Donald J. Trump
+🔴 2020: Stronghold Republican (-29.9%) | Joseph R. Biden vs Donald J. Trump
+🔴 2024: Dominant Republican (-34.0%) | Kamala D. Harris vs Donald J. Trump
+
+💥 TOTAL SWING (2000-2024): 40.5% toward Republicans
+   ⚠️  FLIPPED: DEM → REP
+
+================================================================================
+Luzerne County - NE PA Anthracite (Scranton/Wilkes-Barre)
+--------------------------------------------------------------------------------
+🔵 2000: Likely Democratic (+8.6%) | Al Gore vs George W. Bush
+🔵 2004: Lean Democratic (+3.4%) | John F. Kerry vs George W. Bush
+🔵 2008: Likely Democratic (+8.5%) | Barack Obama vs John McCain
+🔵 2012: Lean Democratic (+4.9%) | Barack Obama vs Mitt Romney
+🔴 2016: Stronghold Republican (-20.0%) | Hillary Clinton vs Donald J. Trump
+🔴 2020: Safe Republican (-14.5%) | Joseph R. Biden vs Donald J. Trump
+🔴 2024: Safe Republican (-19.3%) | Kamala D. Harris vs Donald J. Trump
+
+💥 TOTAL SWING (2000-2024): 27.9% toward Republicans
+   ⚠️  FLIPPED: DEM → REP
+
+================================================================================
+Mercer County - NW PA Manufacturing
+--------------------------------------------------------------------------------
+🔵 2000: Lean Democratic (+1.5%) | Al Gore vs George W. Bush
+🔴 2004: Lean Republican (-2.9%) | John F. Kerry vs George W. Bush
+🔴 2008: Tossup (-0.3%) | Barack Obama vs John McCain
+🔴 2012: Lean Republican (-3.4%) | Barack Obama vs Mitt Romney
+🔴 2016: Stronghold Republican (-25.5%) | Hillary Clinton vs Donald J. Trump
+🔴 2020: Stronghold Republican (-26.4%) | Joseph R. Biden vs Donald J. Trump
+🔴 2024: Dominant Republican (-30.4%) | Kamala D. Harris vs Donald J. Trump
+
+💥 TOTAL SWING (2000-2024): 31.9% toward Republicans
+   ⚠️  FLIPPED: DEM → REP
+
+================================================================================
+Schuylkill County - NE PA Anthracite
+--------------------------------------------------------------------------------
+🔴 2000: Likely Republican (-6.5%) | Al Gore vs George W. Bush
+🔴 2004: Likely Republican (-9.9%) | John F. Kerry vs George W. Bush
+🔴 2008: Likely Republican (-8.8%) | Barack Obama vs John McCain
+🔴 2012: Safe Republican (-13.6%) | Barack Obama vs Mitt Romney
+🔴 2016: Annihilation Republican (-44.8%) | Hillary Clinton vs Donald J. Trump
+🔴 2020: Annihilation Republican (-40.4%) | Joseph R. Biden vs Donald J. Trump
+🔴 2024: Annihilation Republican (-42.4%) | Kamala D. Harris vs Donald J. Trump
+
+💥 TOTAL SWING (2000-2024): 36.0% toward Republicans
+
+================================================================================
+Somerset County - SW PA Coal
+--------------------------------------------------------------------------------
+🔴 2000: Stronghold Republican (-25.4%) | Al Gore vs George W. Bush
+🔴 2004: Stronghold Republican (-29.9%) | John F. Kerry vs George W. Bush
+🔴 2008: Stronghold Republican (-25.5%) | Barack Obama vs John McCain
+🔴 2012: Annihilation Republican (-43.5%) | Barack Obama vs Mitt Romney
+🔴 2016: Annihilation Republican (-57.5%) | Hillary Clinton vs Donald J. Trump
+🔴 2020: Annihilation Republican (-56.9%) | Joseph R. Biden vs Donald J. Trump
+🔴 2024: Annihilation Republican (-57.6%) | Kamala D. Harris vs Donald J. Trump
+
+💥 TOTAL SWING (2000-2024): 32.2% toward Republicans
+
+================================================================================
+Washington County - SW PA Coal/Steel
+--------------------------------------------------------------------------------
+🔵 2000: Likely Democratic (+9.3%) | Al Gore vs George W. Bush
+🔵 2004: Tilt Democratic (+0.6%) | John F. Kerry vs George W. Bush
+🔴 2008: Lean Republican (-4.8%) | Barack Obama vs John McCain
+🔴 2012: Safe Republican (-13.8%) | Barack Obama vs Mitt Romney
+🔴 2016: Stronghold Republican (-25.6%) | Hillary Clinton vs Donald J. Trump
+🔴 2020: Stronghold Republican (-23.0%) | Joseph R. Biden vs Donald J. Trump
+🔴 2024: Stronghold Republican (-25.7%) | Kamala D. Harris vs Donald J. Trump
+
+💥 TOTAL SWING (2000-2024): 34.9% toward Republicans
+   ⚠️  FLIPPED: DEM → REP
+
+================================================================================
+Westmoreland County - SW PA Steel/Manufacturing
+--------------------------------------------------------------------------------
+🔴 2000: Likely Republican (-5.9%) | Al Gore vs George W. Bush
+🔴 2004: Safe Republican (-12.6%) | John F. Kerry vs George W. Bush
+🔴 2008: Safe Republican (-16.9%) | Barack Obama vs John McCain
+🔴 2012: Stronghold Republican (-24.0%) | Barack Obama vs Mitt Romney
+🔴 2016: Dominant Republican (-32.3%) | Hillary Clinton vs Donald J. Trump
+🔴 2020: Stronghold Republican (-28.7%) | Joseph R. Biden vs Donald J. Trump
+🔴 2024: Stronghold Republican (-28.6%) | Kamala D. Harris vs Donald J. Trump
+
+💥 TOTAL SWING (2000-2024): 22.7% toward Republicans
+
+================================================================================
+KEY WORKING-CLASS REALIGNMENT PATTERNS:
+================================================================================
+
+📊 Average swing across 17 working-class counties: -34.1% toward Republicans
+🔀 Number of working-class counties that flipped Republican: 10/17
+
+Counties that flipped: Beaver, Cambria, Carbon, Erie, Fayette, Greene, Lawrence, Luzerne, Mercer, Washington
+
+🔴 Biggest Republican swings in working-class counties:
+   • Greene: -55.9% (2000-2024)
+   • Fayette: -55.0% (2000-2024)
+   • Cambria: -44.0% (2000-2024)
+   • Lawrence: -40.5% (2000-2024)
+   • Carbon: -39.8% (2000-2024)
+
+
+================================================================================
+🏛️ U.S. SENATE RACES ANALYSIS
+================================================================================
+
+📊 STATEWIDE U.S. SENATE RESULTS
+--------------------------------------------------------------------------------
+🔴 2000: Ron Klink vs Rick Santorum | Margin: R+7.05% (-327,054 votes)
+🔵 2006: Bob Casey vs Rick Santorum | Margin: D+17.37% (+708,206 votes)
+🔴 2010: Joe Sestak vs Pat Toomey | Margin: R+2.02% (-80,229 votes)
+🔵 2012: Bob Casey Jr. vs Tom Smith | Margin: D+9.26% (+512,232 votes)
+🔴 2016: Katie McGinty vs Patrick J. Toomey | Margin: R+1.49% (-86,697 votes)
+🔵 2018: Bob Casey Jr. vs Lou Barletta | Margin: D+13.35% (+657,589 votes)
+🔵 2022: John Fetterman vs Mehmet Oz | Margin: D+5.04% (+263,752 votes)
+🔴 2024: Robert P. Casey Jr. vs Dave McCormick | Margin: R+0.22% (-15,115 votes)
+
+👨‍⚖️ BOB CASEY JR.'S SENATE CAREER:
+--------------------------------------------------------------------------------
+2006: 58.7% vs 41.3% (D+17.4%) - Defeated Rick Santorum
+2012: 54.6% vs 45.4% (D+9.3%) - Defeated Tom Smith
+2018: 56.7% vs 43.3% (D+13.3%) - Defeated Lou Barletta
+2024: 49.9% vs 50.1% (D+-0.2%) - Defeated Dave McCormick
+
+🗳️ 2024 SENATE RACE (McCormick vs. Casey):
+--------------------------------------------------------------------------------
+Note: Dave McCormick (R) narrowly defeated Bob Casey (D) in 2024,
+ending Casey's 18-year Senate career. This race data will be added
+to the dataset once official results are compiled.
+
+This marked a significant moment in PA's realignment, as Casey—
+a working-class Democrat from Scranton area—lost in the same year
+that Trump won Pennsylvania by ~2%. McCormick's victory showed that
+even strong Democratic brands struggle in the new Pennsylvania.
