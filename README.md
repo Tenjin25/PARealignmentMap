@@ -193,7 +193,9 @@ Presidential (steel country realigned Republican):
 - 2020: R+17.68%
 - 2024: R+20.71%
 
-**Story**: Beaver County represents the complete working-class realignment. Once Democratic (union steel mills), it now votes 60%+ Republican. Casey's margins here collapsed from being somewhat competitive in 2018 to decisively Republican in 2024. This is the "bellwether of the realignment"—if Casey can't win Beaver, he can't win statewide.
+**Story**: Beaver County represents the complete working-class realignment. Once Democratic (union steel mills), it now votes 60%+ Republican. Casey's margins here collapsed from being somewhat competitive in 2018 to decisively Republican in 2024. 
+
+The particularly sharp Republican swing in 2024 (R+20.71%, up from R+17.68% in 2020) was likely influenced by the **East Palestine train derailment disaster** in February 2023. The Norfolk Southern derailment occurred in Columbiana County, Ohio—directly across the state line from Beaver County. The toxic chemical spill and subsequent controlled burn of vinyl chloride created widespread environmental and health concerns. The Biden administration's response was widely criticized as slow and insufficient, with perception that the federal government prioritized other issues over working-class communities facing an environmental crisis. For Beaver County voters—already skeptical of Democrats on energy and environmental policies—the East Palestine response reinforced narratives of Democratic indifference to blue-collar concerns. This is the "bellwether of the realignment"—if Casey can't win Beaver, he can't win statewide.
 
 ---
 
@@ -282,7 +284,7 @@ Pittsburgh's transition from Republican steel city to Democratic metro:
 ### Southwest PA Rural Counties: Republican Surge
 Counties like Beaver, Greene, Fayette, Washington, and Cambria show massive Republican gains:
 - Former union/coal strongholds now voting 60%+ Republican
-- Environmental concerns over fracking/'green' energy policies
+- Environmental concerns over fracking/'green' energy policies—intensified by the February 2023 East Palestine train derailment just across the Ohio border from Beaver County
 - Manufacturing decline eroding Democratic base
 
 ### Why Pennsylvania Remains the Swing State
