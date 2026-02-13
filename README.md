@@ -36,10 +36,10 @@ Results are categorized by margin of victory:
 
 ### Lackawanna County: Biden's Hometown and the Working-Class Realignment
 Joe Biden's childhood home in Scranton (Lackawanna County) exemplifies the working-class realignment:
-- 2008: D+26.20% (Obama's peak in this labor county)
-- 2016: D+3.60% (Trump: R+22.60% swing in one cycle)
-- 2020: D+8.45% (Biden recovers his hometown coalition)
-- 2024: D+2.80% (Harris: barely holds on, margins too narrow to save Senate races)
+- 2008: D+25.99% (Obama's peak in this labor county)
+- 2016: D+3.48% (Trump: R+22.60% swing in one cycle)
+- 2020: D+8.37% (Biden recovers his hometown coalition)
+- 2024: D+2.79% (Harris: barely holds on, margins too narrow to save Senate races)
 
 **The story**: Lackawanna swung 22.6 points toward Trump in 2016—one of the largest single-cycle swings in the state. Biden partially recovered the county in 2020, but the gains were insufficient. The working-class defection from Democratic candidates was so severe that it flipped neighboring Luzerne County to Trump and narrowly lost Senate races in 2024 despite Harris's narrow margin in Lackawanna itself.
 
@@ -87,12 +87,12 @@ Luzerne exemplifies the Democratic collapse among working-class voters:
 
 | Election | Dem Candidate | Republican | Margin |
 |----------|---------------|-----------|--------|
-| **2008** | Obama | McCain | D+8.51% |
-| **2012** | Obama | Romney | D+4.88% |
-| **2016** | Clinton | Trump | R+20.01% (18-point swing) |
-| **2020** | Biden | Trump | R+14.53% (Trump consolidation) |
+| **2008** | Obama | McCain | D+8.41% |
+| **2012** | Obama | Romney | D+4.81% |
+| **2016** | Clinton | Trump | R+19.44% (18-point swing) |
+| **2020** | Biden | Trump | R+14.39% (Trump consolidation) |
 | **2022** | Shapiro (Gov) | Mastriano | D+2.00% (Mastriano too extreme) |
-| **2024** | Harris (Pres) | Trump | R+19.32% (consolidated Trump support) |
+| **2024** | Harris (Pres) | Trump | R+19.17% (consolidated Trump support) |
 | **2024** | Casey (Senate) | McCormick | R+18.00% (strongest Republican performance) |
 
 **The pattern**: Once Democrats win a Luzerne-type county (coal/steel/union), they assume the math still holds. But the 2016 realignment was permanent. There's no route back for Democrats until the party rebuilds trust in working-class regions or the working-class coalition shifts again.
@@ -135,13 +135,13 @@ Senate Results (Casey's margins):
 - 2024: Dave McCormick (R) vs Robert P. Casey Jr. (D): R+0.60%
 
 Presidential (shows swing county volatility):
-- 2000: D+5.70%
-- 2004: D+1.10%
-- 2008: D+12.50%
-- 2012: D+4.80%
-- 2016: R+4.00%
-- 2020: D+0.70%
-- 2024: R+1.80%
+- 2000: D+5.50%
+- 2004: D+0.88%
+- 2008: D+12.14%
+- 2012: D+4.58%
+- 2016: R+4.17%
+- 2020: D+0.54%
+- 2024: R+1.77%
 
 **Story**: Northampton is a true swing county—margins shift 5-15 points cycle to cycle based on who's running. Casey had held margins here in 2018, but 2024 saw rejection of both the Democratic presidential ticket (Harris) and Casey himself. The county's volatility reflects its composition: white working-class voters, Latino population centers (Allentown), college-educated professionals in lehigh Valley, all competing for control.
 
@@ -160,13 +160,13 @@ Senate Results (Casey's margins):
 - 2024: Dave McCormick (R) vs Robert P. Casey Jr. (D): R+9.60%
 
 Presidential (diverse, sensitive to economy/immigration):
-- 2000: R+9.30%
-- 2004: R+6.60%
-- 2008: D+9.30%
-- 2012: R+1.00%
-- 2016: R+10.40%
-- 2020: R+8.30%
-- 2024: R+12.30%
+- 2000: R+8.97%
+- 2004: R+6.57%
+- 2008: D+9.19%
+- 2012: R+0.99%
+- 2016: R+9.94%
+- 2020: R+8.19%
+- 2024: R+12.18%
 
 **Story**: Berks is Pennsylvania's fastest-growing county, with a booming Latino population (20%+). It should be Democratic territory—diverse, young, growing. Instead, Casey's margins collapsed. This reveals a critical 2024 reality: Latino voters, especially working-class and non-college Latino voters, abandoned Democrats for Trump. The Harris campaign's late entry and McCormick's messaging on the economy appealed to Latino men in particular.
 
@@ -185,13 +185,13 @@ Senate Results (Casey's margins):
 - 2024: Dave McCormick (R) vs Robert P. Casey Jr. (D): R+16.40%
 
 Presidential (steel country realigned Republican):
-- 2000: D+9.00%
+- 2000: D+8.74%
 - 2004: D+2.70%
-- 2008: R+2.90%
-- 2012: R+6.70%
-- 2016: R+19.40%
-- 2020: R+17.90%
-- 2024: R+20.90%
+- 2008: R+2.84%
+- 2012: R+6.57%
+- 2016: R+18.71%
+- 2020: R+17.68%
+- 2024: R+20.71%
 
 **Story**: Beaver County represents the complete working-class realignment. Once Democratic (union steel mills), it now votes 60%+ Republican. Casey's margins here collapsed from being somewhat competitive in 2018 to decisively Republican in 2024. This is the "bellwether of the realignment"—if Casey can't win Beaver, he can't win statewide.
 
@@ -535,7 +535,7 @@ Pennsylvania stands alone among major swing states for its extreme volatility. U
 - Max swing: 7.60%
 
 **Beaver County**: Democratic shift (blue wave)
-- 2000: D+9.00% | 2024: R+20.90%
+- 2000: D+8.74% | 2024: R+20.90%
 - Swing history: 2000: D+9.00%, 2004: D+2.70%, 2008: R+2.90%, 2012: R+6.70%, 2016: R+19.40%, 2020: R+17.90%, 2024: R+20.90%
 - Max swing: 12.70%
 
@@ -565,7 +565,7 @@ Pennsylvania stands alone among major swing states for its extreme volatility. U
 - Max swing: 13.10%
 
 **Northampton County**: Relatively stable
-- 2000: D+5.70% | 2024: R+1.80%
+- 2000: D+5.50% | 2024: R+1.80%
 - Swing history: 2000: D+5.70%, 2004: D+1.10%, 2008: D+12.50%, 2012: D+4.80%, 2016: R+4.00%, 2020: D+0.70%, 2024: R+1.80%
 - Max swing: 11.40%
 
