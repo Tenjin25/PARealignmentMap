@@ -230,6 +230,7 @@ McCormick was a hedge fund manager, Gulf War veteran, and outsider to elected po
 
 - **McCormick's profile**: Wealthy but not flamboyant, veteran, anti-China hawk, economic populist messaging, no political past
 - **The environment**: Biden's unpopular presidency, Harris's last-minute candidacy, economic backlash, working-class realignment complete and locked in
+- **Party unity**: Faced a tougher fight in 2024, but Republicans united behind him early after his 2022 primary loss by fewer than 1,000 votes
 - **McCormick's Senate margins**: Won by just R+0.22% (48.82%-48.60%, 15,115 votes) statewide (tightest race)
 - **County-level results**:
   - Luzerne (Barletta's base): Won for McCormick by 18+ points
@@ -535,6 +536,7 @@ Pennsylvania stands alone among major swing states for its extreme volatility. U
 - 2000: R+27.50% | 2024: R+32.50%
 - Swing history: 2000: R+27.50%, 2004: R+29.20%, 2008: R+27.80%, 2012: R+35.30%, 2016: R+38.50%, 2020: R+32.90%, 2024: R+32.50%
 - Max swing: 7.60%
+Butler also became a 2024 campaign turning point after the high-profile July rally there, hardening turnout and messaging for both sides.
 
 **Beaver County**: Democratic shift (blue wave)
 - 2000: D+8.74% | 2024: R+20.90%
@@ -659,12 +661,12 @@ A 2-3% shift in any of these creates a 50,000+ vote swing statewide.
 
 ### Historical Volatility Timeline
 
-- **2000 → 2004**: Margin +4.30% → +2.50% (-1.80% swing) (DEM)
-- **2004 → 2008**: Margin +2.50% → +10.50% (+7.90% swing) (DEM)
-- **2008 → 2012**: Margin +10.50% → +5.50% (-5.00% swing) (DEM)
-- **2012 → 2016**: Margin +5.50% → -0.80% (-6.20% swing) (REP) **← FLIPPED!**
-- **2016 → 2020**: Margin -0.80% → +1.20% (+1.90% swing) (DEM) **← FLIPPED!**
-- **2020 → 2024**: Margin +1.20% → -1.70% (-2.90% swing) (REP) **← FLIPPED!**
+- **2000 → 2004**: Margin +4.30% (Lean Democratic) → +2.50% (Lean Democratic) (-1.80% swing) (DEM)
+- **2004 → 2008**: Margin +2.50% (Lean Democratic) → +10.50% (Safe Democratic) (+7.90% swing) (DEM)
+- **2008 → 2012**: Margin +10.50% (Safe Democratic) → +5.50% (Likely Democratic) (-5.00% swing) (DEM)
+- **2012 → 2016**: Margin +5.50% (Likely Democratic) → -0.80% (Tilt Republican) (-6.20% swing) (REP) **← FLIPPED!**
+- **2016 → 2020**: Margin -0.80% (Tilt Republican) → +1.20% (Lean Democratic) (+1.90% swing) (DEM) **← FLIPPED!**
+- **2020 → 2024**: Margin +1.20% (Lean Democratic) → -1.70% (Lean Republican) (-2.90% swing) (REP) **← FLIPPED!**
 
 
 ## 🚀 Future Enhancements
