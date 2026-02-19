@@ -5,7 +5,7 @@ Aggregates county-level election results from 2000-2024.
 
 AVAILABLE RACES:
 - President (2000, 2004, 2008, 2012, 2016, 2020, 2024)
-- U.S. Senate (2000, 2004, 2006, 2010, 2012, 2016, 2018, 2024)
+- U.S. Senate (2000, 2004, 2006, 2010, 2012, 2016, 2018, 2022, 2024)
 - Governor (2002, 2006, 2010, 2014, 2018, 2022)
 - Attorney General (2000, 2004, 2008, 2012, 2016, 2020, 2024)
 - Auditor General (2000, 2004, 2008, 2012, 2016, 2020, 2024)
@@ -179,8 +179,8 @@ def normalize_candidate_name(candidate, office_name):
     if not name:
         return ""
 
-    if office_name == "President":
-        match = re.split(r"\s+and\s+", name, flags=re.IGNORECASE, maxsplit=1)
+    if office_name in ("President", "Governor"):
+        match = re.split(r"\s*(?:/|and|&)\s*", name, flags=re.IGNORECASE, maxsplit=1)
         if match:
             name = match[0]
 
@@ -188,7 +188,11 @@ def normalize_candidate_name(candidate, office_name):
     name = name.title()
 
     # Add period to any standalone middle initial (e.g., "Donald J Trump" -> "Donald J. Trump")
-    name = re.sub(r"\b([A-Z])\b", r"\1.", name)
+    name = re.sub(r"\b([A-Z])\b(?!\.)", r"\1.", name)
+
+    # Fix common surname casing (e.g., McCormick, DePasquale)
+    name = re.sub(r"\bMc([a-z])", lambda m: "Mc" + m.group(1).upper(), name)
+    name = re.sub(r"\bDe([a-z])", lambda m: "De" + m.group(1).upper(), name)
 
     suffix_map = {
         "Jr": "Jr.",
@@ -204,6 +208,43 @@ def normalize_candidate_name(candidate, office_name):
         name = " ".join(parts)
 
     return name
+
+def normalize_county_name(county):
+    """Normalize county names to title case with Mc* correction."""
+    if not county:
+        return ""
+    name = str(county).replace(" County", "").strip()
+    if not name:
+        return ""
+    name = " ".join(name.split())
+    name = name.title()
+    name = re.sub(r"\bMc([a-z])", lambda m: "Mc" + m.group(1).upper(), name)
+    return name
+
+def normalize_party_code(party):
+    """Normalize party codes to common abbreviations."""
+    if not party or pd.isna(party):
+        return ""
+    p = str(party).strip()
+    if not p:
+        return ""
+    mapping = {
+        "Dem": "DEM",
+        "Democratic": "DEM",
+        "Rep": "REP",
+        "Republican": "REP",
+        "Grn": "GRN",
+        "Green": "GRN",
+        "Green Party": "GRN",
+        "Lib": "LIB",
+        "Libertarian": "LIB",
+        "Const": "CNST",
+        "Constitution": "CNST",
+        "Constitution Party": "CNST",
+        "Ref": "REF",
+        "Reform": "REF",
+    }
+    return mapping.get(p, p.upper())
 
 def get_president_name(year, party_code):
     """Return full presidential nominee name for a given year and party."""
@@ -223,6 +264,12 @@ def aggregate_precinct_to_county(df):
     # Normalize office names to title case for consistency
     df = df.copy()
     df['office'] = df['office'].str.title()
+
+    # Preserve rows with missing party/candidate by filling blanks before grouping
+    if 'party' in df.columns:
+        df['party'] = df['party'].fillna('')
+    if 'candidate' in df.columns:
+        df['candidate'] = df['candidate'].fillna('')
     
     # Ensure votes is numeric before aggregating
     df['votes'] = pd.to_numeric(df['votes'], errors='coerce').fillna(0).astype(int)
@@ -354,7 +401,7 @@ def load_official_row_offices(official_base_path, county_name_map):
                 if not county_raw:
                     continue
 
-                county = county_name_map.get(county_raw.upper(), county_raw.title())
+                county = county_name_map.get(county_raw.upper(), normalize_county_name(county_raw))
                 party_name = str(row.get("Party Name", "")).strip()
                 votes_raw = str(row.get("Votes", "")).replace(",", "").strip()
                 if not votes_raw:
@@ -410,6 +457,199 @@ def load_official_row_offices(official_base_path, county_name_map):
 
         if year_results:
             results[year] = year_results
+
+    return results
+
+def load_official_us_senate(official_base_path, county_name_map):
+    """Load U.S. Senate results from official county-level CSVs."""
+    official_files = {
+        2018: "Official_2112026093800PM.CSV",
+        2022: "Official_2112026100831PM.CSV",
+        2024: "Official_2182026102327PM.CSV",
+    }
+
+    party_code_map = {
+        "Democratic": "DEM",
+        "Republican": "REP",
+        "Green": "GRN",
+        "Green Party": "GRN",
+        "Libertarian": "LIB",
+        "Constitution": "CNST",
+        "Constitution Party": "CNST",
+        "Reform": "REF",
+    }
+
+    results = {}
+    for year, filename in official_files.items():
+        full_path = os.path.join(official_base_path, filename)
+        if not os.path.exists(full_path):
+            print(f"[!] Warning: Official data not found at {filename}")
+            continue
+
+        df = pd.read_csv(full_path, dtype=str)
+        df = df[df["Office Name"] == "United States Senator"]
+        if df.empty:
+            print(f"[!] Warning: No U.S. Senate data found in {filename}")
+            continue
+
+        county_results = defaultdict(lambda: {
+            "DEM": 0, "REP": 0, "other": 0, "total": 0,
+            "dem_candidate": "", "rep_candidate": "",
+            "all_parties": {}
+        })
+
+        for _, row in df.iterrows():
+            county_raw = str(row.get("County Name", "")).strip()
+            if not county_raw:
+                continue
+            county = county_name_map.get(county_raw.upper(), normalize_county_name(county_raw))
+
+            party_name = str(row.get("Party Name", "")).strip()
+            votes_raw = str(row.get("Votes", "")).replace(",", "").strip()
+            if not votes_raw:
+                continue
+            try:
+                votes = int(votes_raw)
+            except ValueError:
+                continue
+
+            candidate = str(row.get("Candidate Name", "")).strip()
+            party_code = party_code_map.get(party_name, party_name.upper())
+
+            county_results[county]["all_parties"][party_code] = votes
+
+            if party_code == "DEM":
+                county_results[county]["DEM"] += votes
+                if candidate:
+                    county_results[county]["dem_candidate"] = normalize_candidate_name(candidate, "U.S. Senate")
+            elif party_code == "REP":
+                county_results[county]["REP"] += votes
+                if candidate:
+                    county_results[county]["rep_candidate"] = normalize_candidate_name(candidate, "U.S. Senate")
+            else:
+                county_results[county]["other"] += votes
+
+            county_results[county]["total"] += votes
+
+        for county, data in county_results.items():
+            dem = data["DEM"]
+            rep = data["REP"]
+            total = data["total"]
+            other = data["other"]
+            two_party_total = dem + rep
+
+            if two_party_total > 0:
+                dem_pct = (dem / total) * 100
+                rep_pct = (rep / total) * 100
+                margin = dem - rep
+                margin_pct = (margin / two_party_total) * 100
+
+                data["dem_pct"] = round(dem_pct, 2)
+                data["rep_pct"] = round(rep_pct, 2)
+                data["other_votes"] = other
+                data["two_party_total"] = two_party_total
+                data["margin"] = margin
+                data["margin_pct"] = round(margin_pct, 2)
+                data["winner"] = "DEM" if margin > 0 else "REP"
+                data["competitiveness"] = get_competitiveness(margin_pct)
+
+        results[year] = {"U.S. Senate": dict(county_results)}
+
+    return results
+
+def load_official_governor(official_base_path, county_name_map):
+    """Load Governor results from official county-level CSVs."""
+    official_files = {
+        2022: "Official_2112026100831PM.CSV",
+    }
+
+    party_code_map = {
+        "Democratic": "DEM",
+        "Republican": "REP",
+        "Green": "GRN",
+        "Green Party": "GRN",
+        "Libertarian": "LIB",
+        "Constitution": "CNST",
+        "Constitution Party": "CNST",
+        "Reform": "REF",
+        "Keystone": "KEY",
+    }
+
+    results = {}
+    for year, filename in official_files.items():
+        full_path = os.path.join(official_base_path, filename)
+        if not os.path.exists(full_path):
+            print(f"[!] Warning: Official data not found at {filename}")
+            continue
+
+        df = pd.read_csv(full_path, dtype=str)
+        df = df[df["Office Name"] == "Governor"]
+        if df.empty:
+            print(f"[!] Warning: No Governor data found in {filename}")
+            continue
+
+        county_results = defaultdict(lambda: {
+            "DEM": 0, "REP": 0, "other": 0, "total": 0,
+            "dem_candidate": "", "rep_candidate": "",
+            "all_parties": {}
+        })
+
+        for _, row in df.iterrows():
+            county_raw = str(row.get("County Name", "")).strip()
+            if not county_raw:
+                continue
+            county = county_name_map.get(county_raw.upper(), normalize_county_name(county_raw))
+
+            party_name = str(row.get("Party Name", "")).strip()
+            votes_raw = str(row.get("Votes", "")).replace(",", "").strip()
+            if not votes_raw:
+                continue
+            try:
+                votes = int(votes_raw)
+            except ValueError:
+                continue
+
+            candidate = str(row.get("Candidate Name", "")).strip()
+            party_code = party_code_map.get(party_name, party_name.upper())
+
+            county_results[county]["all_parties"][party_code] = votes
+
+            if party_code == "DEM":
+                county_results[county]["DEM"] += votes
+                if candidate:
+                    county_results[county]["dem_candidate"] = normalize_candidate_name(candidate, "Governor")
+            elif party_code == "REP":
+                county_results[county]["REP"] += votes
+                if candidate:
+                    county_results[county]["rep_candidate"] = normalize_candidate_name(candidate, "Governor")
+            else:
+                county_results[county]["other"] += votes
+
+            county_results[county]["total"] += votes
+
+        for county, data in county_results.items():
+            dem = data["DEM"]
+            rep = data["REP"]
+            total = data["total"]
+            other = data["other"]
+            two_party_total = dem + rep
+
+            if two_party_total > 0:
+                dem_pct = (dem / total) * 100
+                rep_pct = (rep / total) * 100
+                margin = dem - rep
+                margin_pct = (margin / two_party_total) * 100
+
+                data["dem_pct"] = round(dem_pct, 2)
+                data["rep_pct"] = round(rep_pct, 2)
+                data["other_votes"] = other
+                data["two_party_total"] = two_party_total
+                data["margin"] = margin
+                data["margin_pct"] = round(margin_pct, 2)
+                data["winner"] = "DEM" if margin > 0 else "REP"
+                data["competitiveness"] = get_competitiveness(margin_pct)
+
+        results[year] = {"Governor": dict(county_results)}
 
     return results
 
@@ -469,6 +709,16 @@ def load_election_data(base_path):
                 if len(office_df) == 0:
                     print(f"  [!] No {race_type} data found for {year}")
                     continue
+
+                # Build candidate -> party map for rows missing party labels
+                candidate_party_map = {}
+                for _, row in office_df.iterrows():
+                    party = normalize_party_code(row.get('party', ''))
+                    candidate = row.get('candidate', '')
+                    if pd.notna(party) and party:
+                        key = normalize_candidate_name(candidate, race_type).lower()
+                        if key and key not in candidate_party_map:
+                            candidate_party_map[key] = party
                 
                 # Group by county and party to get total votes and candidates
                 county_results = defaultdict(lambda: {
@@ -479,9 +729,12 @@ def load_election_data(base_path):
                 
                 for _, row in office_df.iterrows():
                     county = row['county']
-                    party = row['party']
+                    party = normalize_party_code(row['party'])
                     votes = row['votes']
                     candidate = row.get('candidate', '')
+                    if (pd.isna(party) or not party) and candidate:
+                        key = normalize_candidate_name(candidate, race_type).lower()
+                        party = candidate_party_map.get(key, party)
                     
                     if pd.isna(votes) or pd.isna(county):
                         continue
@@ -589,7 +842,8 @@ def create_output_json(election_data, output_path):
     results_by_year = {}
     all_contests = set()
     
-    for year, year_races in election_data.items():
+    for year in sorted(election_data.keys()):
+        year_races = election_data[year]
         year_str = str(year)
         
         # Initialize year structure
@@ -621,7 +875,7 @@ def create_output_json(election_data, output_path):
             
             for county, data in county_results.items():
                 # Normalize county name (remove " County" suffix if present)
-                county_clean = county.replace(' County', '').strip()
+                county_clean = normalize_county_name(county)
                 
                 results_by_year[year_str][contest_category][contest_key]["results"][county_clean] = {
                     "county": county_clean,
@@ -703,6 +957,23 @@ def main():
     county_name_map = build_county_name_map(election_data)
     official_data = load_official_row_offices("../data", county_name_map)
     for year, year_races in official_data.items():
+        if year not in election_data:
+            election_data[year] = {}
+        for race_type in sorted(year_races.keys()):
+            county_results = year_races[race_type]
+            election_data[year][race_type] = county_results
+
+    # Merge U.S. Senate from official county returns (2018, 2022, 2024)
+    official_senate = load_official_us_senate("../data", county_name_map)
+    for year, year_races in official_senate.items():
+        if year not in election_data:
+            election_data[year] = {}
+        for race_type, county_results in year_races.items():
+            election_data[year][race_type] = county_results
+
+    # Merge Governor from official county returns (2022)
+    official_governor = load_official_governor("../data", county_name_map)
+    for year, year_races in official_governor.items():
         if year not in election_data:
             election_data[year] = {}
         for race_type, county_results in year_races.items():
