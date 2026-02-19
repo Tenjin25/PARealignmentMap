@@ -8,8 +8,8 @@ AVAILABLE RACES:
 - U.S. Senate (2000, 2004, 2006, 2010, 2012, 2016, 2018, 2024)
 - Governor (2002, 2006, 2010, 2014, 2018, 2022)
 - Attorney General (2000, 2004, 2008, 2012, 2016, 2020, 2024)
-- Auditor General (2016, 2020, 2024)
-- State Treasurer (2016, 2020, 2024)
+- Auditor General (2000, 2004, 2008, 2012, 2016, 2020, 2024)
+- State Treasurer (2000, 2004, 2008, 2012, 2016, 2020, 2024)
 - State House (2000-2024, varies by year)
 - State Senate (2000-2024, varies by year)
 - U.S. House (2000-2024, varies by year)
@@ -28,6 +28,7 @@ import json
 import os
 from pathlib import Path
 from collections import defaultdict
+import re
 
 def aggreg_precinct_to_county(filepath):
     """Aggregate precinct-level election data to county level."""
@@ -170,6 +171,53 @@ def get_competitiveness(margin_pct):
                 "color": "#67000d"
             }
 
+def normalize_candidate_name(candidate, office_name):
+    """Normalize candidate names to regular case and strip running mates for president."""
+    if not candidate or pd.isna(candidate):
+        return ""
+    name = str(candidate).strip()
+    if not name:
+        return ""
+
+    if office_name == "President":
+        match = re.split(r"\s+and\s+", name, flags=re.IGNORECASE, maxsplit=1)
+        if match:
+            name = match[0]
+
+    name = " ".join(name.split())
+    name = name.title()
+
+    # Add period to any standalone middle initial (e.g., "Donald J Trump" -> "Donald J. Trump")
+    name = re.sub(r"\b([A-Z])\b", r"\1.", name)
+
+    suffix_map = {
+        "Jr": "Jr.",
+        "Sr": "Sr.",
+        "Ii": "II",
+        "Iii": "III",
+        "Iv": "IV",
+        "V": "V",
+    }
+    parts = name.split()
+    if parts and parts[-1] in suffix_map:
+        parts[-1] = suffix_map[parts[-1]]
+        name = " ".join(parts)
+
+    return name
+
+def get_president_name(year, party_code):
+    """Return full presidential nominee name for a given year and party."""
+    president_map = {
+        2000: {"DEM": "Al Gore", "REP": "George W. Bush"},
+        2004: {"DEM": "John F. Kerry", "REP": "George W. Bush"},
+        2008: {"DEM": "Barack Obama", "REP": "John McCain"},
+        2012: {"DEM": "Barack Obama", "REP": "Mitt Romney"},
+        2016: {"DEM": "Hillary Clinton", "REP": "Donald J. Trump"},
+        2020: {"DEM": "Joe Biden", "REP": "Donald J. Trump"},
+        2024: {"DEM": "Kamala Harris", "REP": "Donald J. Trump"},
+    }
+    return president_map.get(year, {}).get(party_code, "")
+
 def aggregate_precinct_to_county(df):
     """Aggregate precinct-level data to county level."""
     # Normalize office names to title case for consistency
@@ -186,6 +234,185 @@ def aggregate_precinct_to_county(df):
     
     return aggregated
 
+def build_county_name_map(election_data):
+    """Build a map of uppercased county name -> canonical county name."""
+    county_map = {}
+    for year_races in election_data.values():
+        for county_results in year_races.values():
+            for county in county_results.keys():
+                county_map[county.upper()] = county
+            if county_map:
+                return county_map
+    return county_map
+
+def load_official_row_offices(official_base_path, county_name_map):
+    """Load Auditor General and State Treasurer from official county-level CSVs."""
+    official_files = {
+        2000: "Official_2182026094443PM.CSV",
+        2004: "Official_2182026094602PM.CSV",
+        2008: "Official_2182026094634PM.CSV",
+        2012: "Official_2182026094715PM.CSV",
+    }
+
+    party_code_map = {
+        "Democratic": "DEM",
+        "Republican": "REP",
+        "Green": "GRN",
+        "Libertarian": "LIB",
+        "Constitution": "CNST",
+        "Reform": "REF",
+    }
+
+    candidate_names = {
+        2000: {
+            "Auditor General": {
+                "Democratic": "Bob Casey Jr.",
+                "Republican": "Katie True",
+                "Green": "Anne E. Goeke",
+                "Libertarian": "Jessica A. Morris",
+                "Constitution": "John H. Rhine",
+                "Reform": "James R. Blair",
+            },
+            "State Treasurer": {
+                "Democratic": "Catherine Baker Knoll",
+                "Republican": "Barbara Hafer",
+                "Green": "Barbara S. Knox",
+                "Libertarian": "John D. Famularo",
+                "Constitution": "John P. McDermott",
+                "Reform": "Joseph F. Patterson",
+            },
+        },
+        2004: {
+            "Auditor General": {
+                "Democratic": "Jack Wagner",
+                "Republican": "Joe Peters",
+                "Green": "Ben Price",
+                "Libertarian": "Berlie Etzel",
+                "Constitution": "Leonard Ritchie",
+            },
+            "State Treasurer": {
+                "Democratic": "Bob Casey Jr.",
+                "Republican": "Jean Craige Pepper",
+                "Libertarian": "Darryl Perry",
+                "Green": "Paul Teese",
+                "Constitution": "Max Lampenfield",
+            },
+        },
+        2008: {
+            "Auditor General": {
+                "Democratic": "Jack Wagner",
+                "Republican": "Chet Beiler",
+                "Libertarian": "Betsy Summers",
+            },
+            "State Treasurer": {
+                "Democratic": "Rob McCord",
+                "Republican": "Tom Ellis",
+                "Libertarian": "Berlie Etzel",
+            },
+        },
+        2012: {
+            "Auditor General": {
+                "Democratic": "Eugene DePasquale",
+                "Republican": "John Maher",
+                "Libertarian": "Betsy Summers",
+            },
+            "State Treasurer": {
+                "Democratic": "Rob McCord",
+                "Republican": "Diana Irey Vaughan",
+                "Libertarian": "Patricia M. Fryman",
+            },
+        },
+    }
+
+    results = {}
+
+    for year, filename in official_files.items():
+        full_path = os.path.join(official_base_path, filename)
+        if not os.path.exists(full_path):
+            print(f"[!] Warning: Official data not found at {filename}")
+            continue
+
+        df = pd.read_csv(full_path, dtype=str)
+        df = df[df["Office Name"].isin(["Auditor General", "State Treasurer"])]
+        if df.empty:
+            continue
+
+        year_results = {}
+        for office_name in ["Auditor General", "State Treasurer"]:
+            office_df = df[df["Office Name"] == office_name]
+            if office_df.empty:
+                continue
+
+            county_results = defaultdict(lambda: {
+                "DEM": 0, "REP": 0, "other": 0, "total": 0,
+                "dem_candidate": "", "rep_candidate": "",
+                "all_parties": {}
+            })
+
+            for _, row in office_df.iterrows():
+                county_raw = str(row.get("County Name", "")).strip()
+                if not county_raw:
+                    continue
+
+                county = county_name_map.get(county_raw.upper(), county_raw.title())
+                party_name = str(row.get("Party Name", "")).strip()
+                votes_raw = str(row.get("Votes", "")).replace(",", "").strip()
+                if not votes_raw:
+                    continue
+                try:
+                    votes = int(votes_raw)
+                except ValueError:
+                    continue
+
+                party_code = party_code_map.get(party_name, party_name.upper())
+                candidate = candidate_names.get(year, {}).get(office_name, {}).get(party_name, "")
+                if not candidate:
+                    candidate = str(row.get("Candidate Name", "")).strip()
+
+                county_results[county]["all_parties"][party_code] = votes
+
+                if party_code == "DEM":
+                    county_results[county]["DEM"] += votes
+                    if candidate:
+                        county_results[county]["dem_candidate"] = normalize_candidate_name(candidate, office_name)
+                elif party_code == "REP":
+                    county_results[county]["REP"] += votes
+                    if candidate:
+                        county_results[county]["rep_candidate"] = normalize_candidate_name(candidate, office_name)
+                else:
+                    county_results[county]["other"] += votes
+
+                county_results[county]["total"] += votes
+
+            for county, data in county_results.items():
+                dem = data["DEM"]
+                rep = data["REP"]
+                total = data["total"]
+                other = data["other"]
+                two_party_total = dem + rep
+
+                if two_party_total > 0:
+                    dem_pct = (dem / total) * 100
+                    rep_pct = (rep / total) * 100
+                    margin = dem - rep
+                    margin_pct = (margin / two_party_total) * 100
+
+                    data["dem_pct"] = round(dem_pct, 2)
+                    data["rep_pct"] = round(rep_pct, 2)
+                    data["other_votes"] = other
+                    data["two_party_total"] = two_party_total
+                    data["margin"] = margin
+                    data["margin_pct"] = round(margin_pct, 2)
+                    data["winner"] = "DEM" if margin > 0 else "REP"
+                    data["competitiveness"] = get_competitiveness(margin_pct)
+
+            year_results[office_name] = dict(county_results)
+
+        if year_results:
+            results[year] = year_results
+
+    return results
+
 def load_election_data(base_path):
     """Load all election data from OpenElections PA data."""
     
@@ -195,12 +422,12 @@ def load_election_data(base_path):
     # - U.S. Senate (varies by cycle, generally: 2000, 2004, 2006, 2010, 2012, 2016, 2018)
     # - Governor (every 4 years in midterms: 2002, 2006, 2010, 2014, 2018)
     # - Attorney General (varies: 2000, 2004, 2008, 2012, 2016, 2020)
-    # - Auditor General, Treasurer, and other statewide offices available
+    # - Auditor General and State Treasurer (2000-2012 from official county returns; 2016+ from OpenElections)
     
     elections = {
         2000: {"file": "2000/20001107__pa__general__county.csv", "races": ["President", "U.S. Senate", "Attorney General", "Auditor General", "State Treasurer"]},
         2002: {"file": "2002/20021105__pa__general__county.csv", "races": ["Governor"]},
-        2004: {"file": "2004/20041102__pa__general__county.csv", "races": ["President", "Attorney General", "Auditor General", "State Treasurer"]},
+        2004: {"file": "2004/20041102__pa__general__county.csv", "races": ["President", "U.S. Senate", "Attorney General", "Auditor General", "State Treasurer"]},
         2006: {"file": "2006/20061107__pa__general__county.csv", "races": ["U.S. Senate", "Governor"]},
         2008: {"file": "2008/20081104__pa__general__county.csv", "races": ["President", "Attorney General", "Auditor General", "State Treasurer"]},
         2010: {"file": "2010/20101102__pa__general__county.csv", "races": ["U.S. Senate", "Governor"]},
@@ -273,11 +500,19 @@ def load_election_data(base_path):
                     if party == 'DEM':
                         county_results[county]['DEM'] += votes
                         if pd.notna(candidate) and candidate:
-                            county_results[county]['dem_candidate'] = candidate
+                            if race_type == "President":
+                                mapped_name = get_president_name(year, "DEM")
+                                county_results[county]['dem_candidate'] = mapped_name or normalize_candidate_name(candidate, race_type)
+                            else:
+                                county_results[county]['dem_candidate'] = normalize_candidate_name(candidate, race_type)
                     elif party == 'REP':
                         county_results[county]['REP'] += votes
                         if pd.notna(candidate) and candidate:
-                            county_results[county]['rep_candidate'] = candidate
+                            if race_type == "President":
+                                mapped_name = get_president_name(year, "REP")
+                                county_results[county]['rep_candidate'] = mapped_name or normalize_candidate_name(candidate, race_type)
+                            else:
+                                county_results[county]['rep_candidate'] = normalize_candidate_name(candidate, race_type)
                     else:
                         county_results[county]['other'] += votes
                     
@@ -459,10 +694,19 @@ def main():
     
     # Load data
     election_data = load_election_data(base_path)
-    
+
     if not election_data:
         print("\n[ERROR] No election data loaded!")
         return
+
+    # Merge Auditor General and State Treasurer from official county returns (2000-2012)
+    county_name_map = build_county_name_map(election_data)
+    official_data = load_official_row_offices("../data", county_name_map)
+    for year, year_races in official_data.items():
+        if year not in election_data:
+            election_data[year] = {}
+        for race_type, county_results in year_races.items():
+            election_data[year][race_type] = county_results
     
     # Create output JSON
     create_output_json(election_data, output_path)
