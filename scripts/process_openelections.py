@@ -243,6 +243,9 @@ def normalize_party_code(party):
         "Constitution Party": "CNST",
         "Ref": "REF",
         "Reform": "REF",
+        "Forward": "FWD",
+        "Forward Party": "FWD",
+        "Keystone": "KEY",
     }
     return mapping.get(p, p.upper())
 
@@ -560,6 +563,7 @@ def load_official_us_senate(official_base_path, county_name_map):
 def load_official_governor(official_base_path, county_name_map):
     """Load Governor results from official county-level CSVs."""
     official_files = {
+        2018: "Official_2112026093800PM.CSV",
         2022: "Official_2112026100831PM.CSV",
     }
 
@@ -650,6 +654,207 @@ def load_official_governor(official_base_path, county_name_map):
                 data["competitiveness"] = get_competitiveness(margin_pct)
 
         results[year] = {"Governor": dict(county_results)}
+
+    return results
+
+def load_official_statewide_2024(official_base_path, county_name_map):
+    """Load 2024 statewide offices from official county-level CSV."""
+    filename = "Official_2182026102327PM.CSV"
+    full_path = os.path.join(official_base_path, filename)
+    if not os.path.exists(full_path):
+        print(f"[!] Warning: Official data not found at {filename}")
+        return {}
+
+    office_map = {
+        "President of the United States": "President",
+        "United States Senator": "U.S. Senate",
+        "Attorney General": "Attorney General",
+        "Auditor General": "Auditor General",
+        "State Treasurer": "State Treasurer",
+    }
+
+    df = pd.read_csv(full_path, dtype=str)
+    df = df[df["Office Name"].isin(office_map.keys())]
+    if df.empty:
+        print(f"[!] Warning: No 2024 statewide data found in {filename}")
+        return {}
+
+    results = {}
+    year = 2024
+
+    for office_name, mapped_office in office_map.items():
+        office_df = df[df["Office Name"] == office_name]
+        if office_df.empty:
+            continue
+
+        county_results = defaultdict(lambda: {
+            "DEM": 0, "REP": 0, "other": 0, "total": 0,
+            "dem_candidate": "", "rep_candidate": "",
+            "all_parties": {}
+        })
+
+        for _, row in office_df.iterrows():
+            county_raw = str(row.get("County Name", "")).strip()
+            if not county_raw:
+                continue
+            county = county_name_map.get(county_raw.upper(), normalize_county_name(county_raw))
+
+            party_code = normalize_party_code(row.get("Party Name", ""))
+            votes_raw = str(row.get("Votes", "")).replace(",", "").strip()
+            if not votes_raw:
+                continue
+            try:
+                votes = int(votes_raw)
+            except ValueError:
+                continue
+
+            candidate = str(row.get("Candidate Name", "")).strip()
+            normalized_candidate = normalize_candidate_name(candidate, mapped_office)
+
+            county_results[county]["all_parties"][party_code] = votes
+
+            if party_code == "DEM":
+                county_results[county]["DEM"] += votes
+                if mapped_office == "President":
+                    mapped_name = get_president_name(year, "DEM")
+                    county_results[county]["dem_candidate"] = mapped_name or normalized_candidate
+                else:
+                    county_results[county]["dem_candidate"] = normalized_candidate
+            elif party_code == "REP":
+                county_results[county]["REP"] += votes
+                if mapped_office == "President":
+                    mapped_name = get_president_name(year, "REP")
+                    county_results[county]["rep_candidate"] = mapped_name or normalized_candidate
+                else:
+                    county_results[county]["rep_candidate"] = normalized_candidate
+            else:
+                county_results[county]["other"] += votes
+
+            county_results[county]["total"] += votes
+
+        for county, data in county_results.items():
+            dem = data["DEM"]
+            rep = data["REP"]
+            total = data["total"]
+            other = data["other"]
+            two_party_total = dem + rep
+
+            if two_party_total > 0:
+                dem_pct = (dem / total) * 100
+                rep_pct = (rep / total) * 100
+                margin = dem - rep
+                margin_pct = (margin / two_party_total) * 100
+
+                data["dem_pct"] = round(dem_pct, 2)
+                data["rep_pct"] = round(rep_pct, 2)
+                data["other_votes"] = other
+                data["two_party_total"] = two_party_total
+                data["margin"] = margin
+                data["margin_pct"] = round(margin_pct, 2)
+                data["winner"] = "DEM" if margin > 0 else "REP"
+                data["competitiveness"] = get_competitiveness(margin_pct)
+
+        results.setdefault(year, {})[mapped_office] = dict(county_results)
+
+    return results
+
+def load_official_statewide_2020(official_base_path, county_name_map):
+    """Load 2020 statewide offices from official county-level CSV."""
+    filename = "Official_2112026093510PM.CSV"
+    full_path = os.path.join(official_base_path, filename)
+    if not os.path.exists(full_path):
+        print(f"[!] Warning: Official data not found at {filename}")
+        return {}
+
+    office_map = {
+        "President of the United States": "President",
+        "Attorney General": "Attorney General",
+        "Auditor General": "Auditor General",
+        "State Treasurer": "State Treasurer",
+    }
+
+    df = pd.read_csv(full_path, dtype=str)
+    df = df[df["Office Name"].isin(office_map.keys())]
+    if df.empty:
+        print(f"[!] Warning: No 2020 statewide data found in {filename}")
+        return {}
+
+    results = {}
+    year = 2020
+
+    for office_name, mapped_office in office_map.items():
+        office_df = df[df["Office Name"] == office_name]
+        if office_df.empty:
+            continue
+
+        county_results = defaultdict(lambda: {
+            "DEM": 0, "REP": 0, "other": 0, "total": 0,
+            "dem_candidate": "", "rep_candidate": "",
+            "all_parties": {}
+        })
+
+        for _, row in office_df.iterrows():
+            county_raw = str(row.get("County Name", "")).strip()
+            if not county_raw:
+                continue
+            county = county_name_map.get(county_raw.upper(), normalize_county_name(county_raw))
+
+            party_code = normalize_party_code(row.get("Party Name", ""))
+            votes_raw = str(row.get("Votes", "")).replace(",", "").strip()
+            if not votes_raw:
+                continue
+            try:
+                votes = int(votes_raw)
+            except ValueError:
+                continue
+
+            candidate = str(row.get("Candidate Name", "")).strip()
+            normalized_candidate = normalize_candidate_name(candidate, mapped_office)
+
+            county_results[county]["all_parties"][party_code] = votes
+
+            if party_code == "DEM":
+                county_results[county]["DEM"] += votes
+                if mapped_office == "President":
+                    mapped_name = get_president_name(year, "DEM")
+                    county_results[county]["dem_candidate"] = mapped_name or normalized_candidate
+                else:
+                    county_results[county]["dem_candidate"] = normalized_candidate
+            elif party_code == "REP":
+                county_results[county]["REP"] += votes
+                if mapped_office == "President":
+                    mapped_name = get_president_name(year, "REP")
+                    county_results[county]["rep_candidate"] = mapped_name or normalized_candidate
+                else:
+                    county_results[county]["rep_candidate"] = normalized_candidate
+            else:
+                county_results[county]["other"] += votes
+
+            county_results[county]["total"] += votes
+
+        for county, data in county_results.items():
+            dem = data["DEM"]
+            rep = data["REP"]
+            total = data["total"]
+            other = data["other"]
+            two_party_total = dem + rep
+
+            if two_party_total > 0:
+                dem_pct = (dem / total) * 100
+                rep_pct = (rep / total) * 100
+                margin = dem - rep
+                margin_pct = (margin / two_party_total) * 100
+
+                data["dem_pct"] = round(dem_pct, 2)
+                data["rep_pct"] = round(rep_pct, 2)
+                data["other_votes"] = other
+                data["two_party_total"] = two_party_total
+                data["margin"] = margin
+                data["margin_pct"] = round(margin_pct, 2)
+                data["winner"] = "DEM" if margin > 0 else "REP"
+                data["competitiveness"] = get_competitiveness(margin_pct)
+
+        results.setdefault(year, {})[mapped_office] = dict(county_results)
 
     return results
 
@@ -974,6 +1179,22 @@ def main():
     # Merge Governor from official county returns (2022)
     official_governor = load_official_governor("../data", county_name_map)
     for year, year_races in official_governor.items():
+        if year not in election_data:
+            election_data[year] = {}
+        for race_type, county_results in year_races.items():
+            election_data[year][race_type] = county_results
+
+    # Merge 2024 statewide offices from official county returns
+    official_2024 = load_official_statewide_2024("../data", county_name_map)
+    for year, year_races in official_2024.items():
+        if year not in election_data:
+            election_data[year] = {}
+        for race_type, county_results in year_races.items():
+            election_data[year][race_type] = county_results
+
+    # Merge 2020 statewide offices from official county returns
+    official_2020 = load_official_statewide_2020("../data", county_name_map)
+    for year, year_races in official_2020.items():
         if year not in election_data:
             election_data[year] = {}
         for race_type, county_results in year_races.items():
